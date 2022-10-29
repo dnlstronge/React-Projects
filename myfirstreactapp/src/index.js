@@ -78,7 +78,7 @@ import './index.css';
             "Go to move #" + move : 
             "Go to game start";
             return (
-                <li>
+                <li key={move}>
                     <button onClick={() => this.jumpTo(move)}> {desc}</button>
                 </li> 
             );
@@ -97,7 +97,7 @@ import './index.css';
           </div>
           <div className="game-info">
             <div>{status}</div>
-            <ol>{/* TODO */}</ol>
+            <ol>{moves}</ol>
           </div>
         </div>
       );
