@@ -2,12 +2,12 @@
 
 
 import './App.css';
-import data from './data.JSON';
+import data from './data.json';
 import React, {useState} from 'react';
 
 import Header from './header';
 import ToDoList from './ToDoList';
-import ToDo from './ToDo';
+
 
 // f-comps 
 
@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
     <Header />
-    <toDoList toDoList={toDoList} />
+    <ToDoList toDoList={toDoList} />
     </div>
   );
 }
