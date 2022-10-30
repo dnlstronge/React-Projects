@@ -20,4 +20,4 @@ const ToDoList = ({toDoList}) => {
 
 //export 
 
-export default toDoList;
+export default ToDoList;
