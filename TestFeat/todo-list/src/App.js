@@ -1,11 +1,21 @@
-import logo from './logo.svg';
+//imports
+
+
 import './App.css';
-import Header from './header'
+import data from './data.JSON';
+import React, {useState} from 'react';
+import Header from './header';
+import toDoList from './toDoList';
+import toDo from './toDo';
+
+// f-comps 
 
 function App() {
+  const [toDoList, setToDoList] = useState(data)
   return (
     <div className="App">
-      Hello world, a to-do-list will go here
+    <Header />
+
     </div>
   );
 }
