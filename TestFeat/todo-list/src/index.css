@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: lightgrey;
 }
 
 code {
@@ -14,4 +15,5 @@ code {
 
 .strike {
   text-decoration: line-through;
+  color: red;
 };
