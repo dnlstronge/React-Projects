@@ -1,6 +1,6 @@
 
 import './App.css';
-import {useState} from 'react';
+import React, {useState} from 'react';
 import Title from './components/Title';
 
 
@@ -52,22 +52,27 @@ const red = "Lots of exiting happenings a happening!"
     )
     }
     
-     
 
     {showEvents && events.map((element, index) => (
-    <div key={element.id}>
+    <React.Fragment key={element.id}>
    
     <h2> * {element.title} - {element.price}</h2>
     <button onClick={() => handleClick(element.id)}>Delete element </button>
-    </div>
+    </React.Fragment>
     ))}
     
-    </div>
     
+    </div>
   );
 }
 
-
-// important :)
-
 export default App;
+
+/*Above: I created a fragment <> instead of the <div> but this does not
+work because I am using props! I can fix this by using React.Fragment?
+
+
+yup - clear
+*/
+
+
