@@ -6,8 +6,7 @@ import Title from './components/Title';
 
 function App() {
 
-  //add new function for condtional state change
-  // remember call the pars whatever you like
+
 
   const [showEvents, setShowEvents ] = useState(true)
 
@@ -33,12 +32,7 @@ console.log(showEvents)
 
 const red = "Lots of exiting happenings a happening!"
   return (
- //add imported component - I remember it must be nested inside <div>
- //I can add another Title in with different prop values? what happens?
-
- // so i have basically added another Title component, and passed it
- // different values to its props, I think I could even add other props
- // they will can be passed on the same way?
+ 
     <div className="App">
     <Title titleprop="Events in your area" newprop={red}/>
     <Title titleprop="Stuff going down here" newprop="amongst other thangs!" />
