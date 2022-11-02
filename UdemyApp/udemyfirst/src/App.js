@@ -14,19 +14,20 @@ function App() {
     {title: "Lord", surname: "Finchester", id: 2},
     {title: "Ms", surname: "Hayberbrook", id: 3}
   ])
-
-  // check handler works: should output 1, 2, 3 in console (clear)
-  // return true to keep item in, false to filter out
-  // creates a new array
+// this here is better practice, what id the state was updated
+// elsewhere, it could affect things
+// all i've done is pass the filter into a function
 let handleClick = (id) => {
-  setevent()
+  setevent(() => {
+    return events.filter((element) => {
+      return id !== element.id
+    })
+  })
  console.log(id)
 
 };
 
-//great the handler now deletes the element when it equal to its id
-// note refreshing the page returns the data as the changes are
-//not persistant
+
 
   return (
   
