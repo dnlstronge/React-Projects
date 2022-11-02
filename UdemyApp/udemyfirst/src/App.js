@@ -12,9 +12,9 @@ function App() {
   const [showEvents, setShowEvents ] = useState(true)
 
   let [events, setevent] = useState([
-    {title: "Dr", surname: "Foster", id: 1},
-    {title: "Lord", surname: "Finchester", id: 2},
-    {title: "Ms", surname: "Hayberbrook", id: 3}
+    {title: "Live Music", price: "£10pp", id: 1},
+    {title: "Family Fun Night", price: "Free Entry", id: 2},
+    {title: "Comedy club", price: "£5pp", id: 3}
   ])
 
  let handleClick = (id) => {
@@ -55,7 +55,7 @@ console.log(showEvents)
     {showEvents && events.map((element, index) => (
     <div key={element.id}>
    
-    <h2> {index} His name was {element.surname}</h2>
+    <h2> {index} - {element.title} - {element.price}</h2>
     <button onClick={() => handleClick(element.id)}>Delete element </button>
     </div>
     ))}
