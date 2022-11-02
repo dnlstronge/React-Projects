@@ -16,11 +16,17 @@ function App() {
   ])
 
   // check handler works: should output 1, 2, 3 in console (clear)
+  // return true to keep item in, false to filter out
+  // creates a new array
 let handleClick = (id) => {
-
+  setevent()
  console.log(id)
 
 };
+
+//great the handler now deletes the element when it equal to its id
+// note refreshing the page returns the data as the changes are
+//not persistant
 
   return (
   
