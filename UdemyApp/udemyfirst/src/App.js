@@ -65,19 +65,30 @@ const red = "Lots of exciting happenings a happening!"
     <button onClick={() => handleClick(element.id)}>Delete element </button>
     </React.Fragment>
     ))}
-    
-    <Modal />
+{/*     
+      <Modal> 
+          <h2 className="modal">10% off!
+              <p>Use BIGDAVE1 at checkout</p>
+          </h2>
+      </Modal> */}
+      <Modal>
+      <h2 className="modal">Terms and conditions
+              <p>Discount is subject to availability, excess consumption of fun may lead
+              to repeat bouts of hysteria. Big Dave Promotions does not admit liabilty for any torn muscles
+              induced by way of overexposure to laughter.</p>
+          </h2>
+      </Modal> 
+
     </div>
   );
 }
+//above let modal have children by taking the jsx from
+// modal js and pasting into modal (for this use open/close tags)
 
 export default App;
 
-/*Above: I created a fragment <> instead of the <div> but this does not
-work because I am using props! I can fix this by using React.Fragment?
 
 
-yup - clear
-*/
+
 
 

@@ -1,12 +1,17 @@
 
 import './Modal.css'
-export default function Modal() {
+export default function Modal({children}) {
   return (
     <div className="modal-backdrop">
-        <div className="modal">10% off!
-            <p>Use BIGDAVE1 at checkout</p>
-        </div>
+        {children}
     </div>
 
   )
 }
+// you can access the chidren of Modal in app.js
+// via props, see above
+
+
+//children essentialy says find me the children inside this
+
+//use destructuring!
