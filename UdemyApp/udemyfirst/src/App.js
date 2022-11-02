@@ -18,8 +18,8 @@ function App() {
 // elsewhere, it could affect things
 // all i've done is pass the filter into a function
 let handleClick = (id) => {
-  setevent(() => {
-    return events.filter((element) => {
+  setevent((prevElements) => {
+    return prevElements.filter((element) => {
       return id !== element.id
     })
   })
