@@ -33,14 +33,23 @@ console.log(showEvents)
 
 
   return (
-  
+  // add another logical to hide/show button as appropriate
     <div className="App">
+    {showEvents && (
+      // if showEvents is true show this: 
      <div>
       <button onClick={() => setShowEvents(false)}>Hide Events</button>
     </div>
+    )
+    // if showEvents is false show this
+    }
+    {!showEvents && (
     <div>
       <button onClick={() => setShowEvents(true)}>Show Events</button>
     </div>
+    )
+    }
+    
      
 
     {showEvents && events.map((element, index) => (
