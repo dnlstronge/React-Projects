@@ -6,27 +6,30 @@ import {useState} from 'react';
 
 function App() {
 
-  // change to an array of objects
-  // give each an id
+  //add new function for condtional state change
+  // remember call the pars whatever you like
+
+  const [showEvents, setShowEvents ] = useState(true)
 
   let [events, setevent] = useState([
     {title: "Dr", surname: "Foster", id: 1},
     {title: "Lord", surname: "Finchester", id: 2},
     {title: "Ms", surname: "Hayberbrook", id: 3}
   ])
-// this here is better practice, what id the state was updated
-// elsewhere, it could affect things
-// all i've done is pass the filter into a function
-let handleClick = (id) => {
+
+ let handleClick = (id) => {
   setevent((prevElements) => {
     return prevElements.filter((element) => {
       return id !== element.id
     })
   })
  console.log(id)
-
+ 
 };
 
+// test whether usestate is returning boolean on click (clear)
+
+console.log(showEvents)
 
 
   return (
@@ -35,6 +38,12 @@ let handleClick = (id) => {
 
     {events.map((element, index) => (
     <div key={element.id}>
+    <div>
+      <button onClick={() => setShowEvents(false)}>Hide Events</button>
+    </div>
+    <div>
+      <button onClick={() => setShowEvents(true)}>Show Events</button>
+    </div>
      
     <h2> {index} His name was {element.surname}</h2>
     <button onClick={() => handleClick(element.id)}>Delete element </button>
