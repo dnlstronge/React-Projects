@@ -35,16 +35,17 @@ console.log(showEvents)
   return (
   
     <div className="App">
-
-    {events.map((element, index) => (
-    <div key={element.id}>
-    <div>
+     <div>
       <button onClick={() => setShowEvents(false)}>Hide Events</button>
     </div>
     <div>
       <button onClick={() => setShowEvents(true)}>Show Events</button>
     </div>
      
+
+    {showEvents && events.map((element, index) => (
+    <div key={element.id}>
+   
     <h2> {index} His name was {element.surname}</h2>
     <button onClick={() => handleClick(element.id)}>Delete element </button>
     </div>
