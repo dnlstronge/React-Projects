@@ -1,7 +1,7 @@
 
 import './App.css';
 import {useState} from 'react';
-
+import Title from './components/Title';
 
 
 function App() {
@@ -27,21 +27,23 @@ function App() {
  
 };
 
-// test whether usestate is returning boolean on click (clear)
+
 
 console.log(showEvents)
 
-
+const red = "Lots of exiting happenings a happening!"
   return (
-  // add another logical to hide/show button as appropriate
+ //add imported component - I remember it must be nested inside <div>
     <div className="App">
+    <Title titleprop="Events in your area" newprop={red}/>
+    <br />
     {showEvents && (
-      // if showEvents is true show this: 
+
      <div>
       <button onClick={() => setShowEvents(false)}>Hide Events</button>
     </div>
     )
-    // if showEvents is false show this
+    
     }
     {!showEvents && (
     <div>
@@ -55,7 +57,7 @@ console.log(showEvents)
     {showEvents && events.map((element, index) => (
     <div key={element.id}>
    
-    <h2> {index} - {element.title} - {element.price}</h2>
+    <h2> * {element.title} - {element.price}</h2>
     <button onClick={() => handleClick(element.id)}>Delete element </button>
     </div>
     ))}
