@@ -2,6 +2,8 @@
 import './App.css';
 import React, {useState} from 'react';
 import Title from './components/Title';
+import Modal from './components/Modal';
+
 
 
 function App() {
@@ -30,12 +32,15 @@ function App() {
 
 console.log(showEvents)
 
-const red = "Lots of exiting happenings a happening!"
+const red = "Lots of exciting happenings a happening!"
+// add a modal to demonstrate children
   return (
  
     <div className="App">
-    <Title titleprop="Events in your area" newprop={red}/>
-    <Title titleprop="Stuff going down here" newprop="amongst other thangs!" />
+   
+    <Title titleprop="Events in your area: " newprop={red}/>
+
+    
     <br />
     {showEvents && (
 
@@ -61,7 +66,7 @@ const red = "Lots of exiting happenings a happening!"
     </React.Fragment>
     ))}
     
-    
+    <Modal />
     </div>
   );
 }
