@@ -1,0 +1,25 @@
+
+
+.title-block .title {
+ 
+    width: auto;
+    background-color: rgb(223, 220, 215);
+    color: rgb(31, 26, 26);
+    border-radius: 5px;
+    border: 12px solid rgb(236, 216, 216);
+    margin: auto;
+    padding: 30px;
+    
+  
+  }
+  .title-block .subtitle {
+  
+    width: auto;
+    background-color: rgb(221, 218, 214);
+    color: rgb(31, 26, 26);
+    border-radius: 5px;
+    border: 12px solid rgb(230, 221, 221);
+    margin: auto;
+    padding: 30px;
+    
+  };

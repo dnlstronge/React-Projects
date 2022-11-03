@@ -15,26 +15,17 @@ code {
     monospace;
 }
 
-.title {
- 
-  width: auto;
-  background-color: rgb(223, 220, 215);
-  color: rgb(31, 26, 26);
-  border-radius: 5px;
-  border: 12px solid rgb(236, 216, 216);
-  margin: auto;
-  padding: 30px;
-  
+p, h1, h2 {
+  color: #555;
+}
+button {
+  background:rgb(221, 218, 214);
+  color: rgb(92, 88, 88);
+  padding: 10px;
+  border: 0;
+  border-radius: 4px;
+  margin: 10px auto;
+  cursor: pointer;
+
 
 }
-.subtitle {
-
-  width: auto;
-  background-color: rgb(221, 218, 214);
-  color: rgb(31, 26, 26);
-  border-radius: 5px;
-  border: 12px solid rgb(230, 221, 221);
-  margin: auto;
-  padding: 30px;
-  
-};
