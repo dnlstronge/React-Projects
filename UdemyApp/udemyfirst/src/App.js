@@ -66,9 +66,9 @@ const red = "Lots of exciting happenings a happening!"
     }
     
 
-    {showEvents && (<EventList handleClick={handleClick} events={events}/>)}
+    {showEvents && (<EventList handleClick={handleClick} events={events}/>) }
 
-      {showModal && <Modal handleClose={handleClose}>
+      {showModal && <Modal handleClose={handleClose} isSalesModal={true} >
       <h2>Terms and conditions
               <p>Discount is subject to availability, excess consumption of fun may lead
               to repeat bouts of hysteria. Big Dave Promotions does not admit liabilty for any torn muscles

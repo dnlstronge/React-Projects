@@ -13,4 +13,9 @@ background: rgba(0,0,0,0.5);
     background: #fff;
     border-radius: 10px;
 
-};
+}
+.modal .trueClass {
+    border: 2px solid;
+    background: red;
+    color: black;
+}
