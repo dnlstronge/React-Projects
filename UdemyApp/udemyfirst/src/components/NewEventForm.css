@@ -1,3 +1,10 @@
+.new-event-form {
+    width: 50%;
+    height: 50%;
+    display: block;
+    margin-bottom: 200px;
+}
+
 .new-event-form label,
 .new-event-form input {
     display: block;
@@ -8,4 +15,12 @@
     box-sizing: border-box;
     font-size: 1.2em;
 
+}
+.reset {
+    font-weight: bold;
+
+}
+.reset:hover {
+    cursor: pointer;
+    color: black;
 }

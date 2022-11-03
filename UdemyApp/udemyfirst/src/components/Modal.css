@@ -9,9 +9,12 @@ background: rgba(0,0,0,0.5);
 .modal {
     padding: 30px;
     max-width: 480px;
-    margin: 200px auto;
-    background: #fff;
+    height: auto;
+    margin: auto;
+    background: rgb(223, 192, 192);
     border-radius: 10px;
+    margin-bottom: 90px;
+    padding-bottom: 25%;
 
 }
 .modal .trueClass {
