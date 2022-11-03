@@ -76,13 +76,12 @@ const red = "Lots of exciting happenings a happening!"
           </h2>
         
       </Modal> }
-      <button onClick={() => setShowModal(true)}>Click for offers</button>
+      <button onClick={() => setShowModal(true)}>Event Form</button>
 
     </div>
   );
 }
-//add function to update state of modal
-// this must be done from here
+
 export default App;
 
 
