@@ -24,7 +24,7 @@ function App() {
       return id !== element.id
     })
   })
- console.log(id)
+ 
  
 };
 
@@ -32,6 +32,7 @@ function App() {
 
 const handleClose = () => {
   setShowModal(false)
+  console.log(showModal)
 }
 
 //now pass as a prop to Modal
@@ -72,13 +73,13 @@ const red = "Lots of exciting happenings a happening!"
     </React.Fragment>
     ))}
 
-      <Modal handleClose={handleClose}>
-      <h2 className="modal">Terms and conditions
+      {showModal && <Modal handleClose={handleClose}>
+      <h2>Terms and conditions
               <p>Discount is subject to availability, excess consumption of fun may lead
               to repeat bouts of hysteria. Big Dave Promotions does not admit liabilty for any torn muscles
               induced by way of overexposure to laughter.</p>
           </h2>
-      </Modal> 
+      </Modal> }
 
     </div>
   );
