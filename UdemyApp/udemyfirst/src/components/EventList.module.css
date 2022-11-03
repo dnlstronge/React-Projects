@@ -1,0 +1,11 @@
+.card {
+    border: 1px solid black;
+    border-radius: 3px;
+    background: teal;
+    color: lightblue;
+    padding: 10px;
+    margin: 10px auto;
+}
+.card button {
+    background: white;
+}
