@@ -9,7 +9,7 @@ import Modal from './components/Modal';
 function App() {
 
 
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const [showEvents, setShowEvents ] = useState(true);
 
   let [events, setevent] = useState([
@@ -79,7 +79,9 @@ const red = "Lots of exciting happenings a happening!"
               to repeat bouts of hysteria. Big Dave Promotions does not admit liabilty for any torn muscles
               induced by way of overexposure to laughter.</p>
           </h2>
+        
       </Modal> }
+      <button onClick={setShowModal}>Click for offers</button>
 
     </div>
   );
