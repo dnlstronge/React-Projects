@@ -14,22 +14,24 @@ export default function NewEventForm() {
         setDate('')
     }
 
-   /* const handleChange = (e) => {
-        setTitle(e.target.value)
-        
-    }
-    */
+
 
 
   return (
     <form className="new-event-form">
         <label>
         <span>Event Title</span>
-            <input onChange={(e) => setTitle(e.target.value) } type="text" value={title} />
+            <input 
+            onChange={(e) => setTitle(e.target.value) } 
+            type="text" 
+            value={title} />
         </label>
         <label>
         <span>Event Date</span>
-            <input onChange={(e) => setDate(e.target.value)} type="date" value={date}/>
+            <input 
+            onChange={(e) => setDate(e.target.value)} 
+            type="date" 
+            value={date}/>
         </label>
         <p>Title: {title} Date: {date}</p>
         <p className="reset" onClick={resetForm}>Reset Form</p>
