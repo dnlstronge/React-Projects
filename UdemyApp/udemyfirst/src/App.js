@@ -3,6 +3,7 @@ import './App.css';
 import React, {useState} from 'react';
 import Title from './components/Title';
 import Modal from './components/Modal';
+import EventList from './components/EventList';
 
 
 
@@ -65,13 +66,7 @@ const red = "Lots of exciting happenings a happening!"
     }
     
 
-    {showEvents && events.map((element, index) => (
-    <React.Fragment key={element.id}>
-   
-    <h2> * {element.title} - {element.price}</h2>
-    <button onClick={() => handleClick(element.id)}>Delete element </button>
-    </React.Fragment>
-    ))}
+    {showEvents && (<EventList handleClick={handleClick} events={events}/>)}
 
       {showModal && <Modal handleClose={handleClose}>
       <h2>Terms and conditions
@@ -81,7 +76,7 @@ const red = "Lots of exciting happenings a happening!"
           </h2>
         
       </Modal> }
-      <button onClick={setShowModal}>Click for offers</button>
+      <button onClick={() => setShowModal(true)}>Click for offers</button>
 
     </div>
   );

@@ -1,7 +1,8 @@
-
+import ReactDOM from 'react-dom'
 import './Modal.css'
+
 export default function Modal({children, handleClose}) {
-  return (
+  return ReactDOM.createPortal( (
     <div className="modal-backdrop">
       <div className="modal">
         {children}
@@ -9,12 +10,8 @@ export default function Modal({children, handleClose}) {
       </div>
     </div>
 
-  )
-}
-// you can access the chidren of Modal in app.js
-// via props, see above
+  ), document.body )
+};
 
-
-//children essentialy says find me the children inside this
-
-//use destructuring!
+// exploring use of portals, import reactDOM
+// takes to arguments: what and where......
