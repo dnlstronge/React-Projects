@@ -1,9 +1,10 @@
 
 import './Modal.css'
-export default function Modal({children}) {
+export default function Modal({children, handleClose}) {
   return (
     <div className="modal-backdrop">
         {children}
+        <button onClick={handleClose}>Close</button>
     </div>
 
   )

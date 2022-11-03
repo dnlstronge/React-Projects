@@ -9,8 +9,8 @@ import Modal from './components/Modal';
 function App() {
 
 
-
-  const [showEvents, setShowEvents ] = useState(true)
+  const [showModal, setShowModal] = useState(true);
+  const [showEvents, setShowEvents ] = useState(true);
 
   let [events, setevent] = useState([
     {title: "Live Music", price: "£10pp", id: 1},
@@ -28,12 +28,18 @@ function App() {
  
 };
 
+//set handler here:
 
+const handleClose = () => {
+  setShowModal(false)
+}
+
+//now pass as a prop to Modal
 
 console.log(showEvents)
 
 const red = "Lots of exciting happenings a happening!"
-// add a modal to demonstrate children
+
   return (
  
     <div className="App">
@@ -65,13 +71,8 @@ const red = "Lots of exciting happenings a happening!"
     <button onClick={() => handleClick(element.id)}>Delete element </button>
     </React.Fragment>
     ))}
-{/*     
-      <Modal> 
-          <h2 className="modal">10% off!
-              <p>Use BIGDAVE1 at checkout</p>
-          </h2>
-      </Modal> */}
-      <Modal>
+
+      <Modal handleClose={handleClose}>
       <h2 className="modal">Terms and conditions
               <p>Discount is subject to availability, excess consumption of fun may lead
               to repeat bouts of hysteria. Big Dave Promotions does not admit liabilty for any torn muscles
@@ -82,9 +83,8 @@ const red = "Lots of exciting happenings a happening!"
     </div>
   );
 }
-//above let modal have children by taking the jsx from
-// modal js and pasting into modal (for this use open/close tags)
-
+//add function to update state of modal
+// this must be done from here
 export default App;
 
 
