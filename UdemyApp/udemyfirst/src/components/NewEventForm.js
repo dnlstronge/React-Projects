@@ -28,6 +28,8 @@ export default function NewEventForm() {
             <input onChange={(e) => setDate(e.target.value)} type="date" />
         </label>
         <button>Submit</button>
+        <p>Title: {title} Date: {date}</p>
     </form>
   )
 }
+// add <p> to output title and date in modal
