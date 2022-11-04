@@ -14,30 +14,25 @@ function App() {
   const [showModal, setShowModal] = useState(false);
   const [showEvents, setShowEvents ] = useState(true);
 
-  let [events, setevent] = useState([
-    {title: "Live Music", price: "£10pp", id: 1},
-    {title: "Family Fun Night", price: "Free Entry", id: 2},
-    {title: "Comedy club", price: "£5pp", id: 3}
+  const [events, setevent] = useState([
+  
   ])
+  const addevent = (event) => {
+    setevent((prevEvents) => {
+      return [...prevEvents, event]})
+      setShowModal(false);
+  }
 
  let handleClick = (id) => {
-  setevent((prevElements) => {
-    return prevElements.filter((element) => {
-      return id !== element.id
+  setevent((prevEvents) => {
+    return prevEvents.filter((events) => {
+      return id !== events.id
     })
   })
  
  
 };
 
-//set handler here:
-
-const handleClose = () => {
-  setShowModal(false)
-  console.log(showModal)
-}
-
-//now pass as a prop to Modal
 
 console.log(showEvents)
 
@@ -69,8 +64,8 @@ const red = "Lots of exciting happenings a happening!"
 
     {showEvents && (<EventList handleClick={handleClick} events={events}/>) }
 
-      {showModal && <Modal handleClose={handleClose} isSalesModal={true} >
-      <NewEventForm />
+      {showModal && <Modal isSalesModal={true} >
+      <NewEventForm addevent={addevent} />
       </Modal> }
       <button onClick={() => setShowModal(true)}>Event Form</button>
 
