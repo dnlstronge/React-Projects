@@ -20,8 +20,8 @@ export default function Triplist() {
     // below is triggered to fetch new data due to dep array (url) in useCB
     useEffect(() => {
         fetchTrips()
-      }, [url, fetchTrips])
-
+      }, [ fetchTrips])
+// URL no longet needed as a dependency
 
 
 // now what if one of the dependencies was a function?
@@ -32,7 +32,7 @@ export default function Triplist() {
 // this has cause inf loop
 // object or an array as a dep would cause the same issue
 //but could be wrapped in a state hook negating this
-// ENTER: USE CALLBACK
+// ENTER: USECALLBACK
     console.log(trips)
 
         
