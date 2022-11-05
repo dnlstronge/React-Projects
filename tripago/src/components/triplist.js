@@ -1,33 +1,25 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState } from 'react'
+import useFetch from '../hooks/useFetch'
 import './triplist.css'
 
 //try creating a custom hook to bundle all of the fetch logic:
+// remove the state to for getting trips data - now got with custom hook
+// uses data from the new hook instead
 
 export default function Triplist() {
-    const [trips, settrips] = useState([])
+ 
 
     const [url, setUrl] = useState('http://localhost:3000/trips')
+    const {data} = useFetch(url)
 
-    const fetchTrips = useCallback(async () => {
-      const response = await fetch(url)
-      const json = await response.json()
-        settrips(json)
-      
-    }, [url])
-    useEffect(() => {
-        fetchTrips()
-      }, [ fetchTrips])
+   // removed logic as no longer needed
 
-
-
-    console.log(trips)
-
-        
+  // need to changes 'trips' to data, as now cycling through 'data   
   return (
     <div className="trip-list">
     <h2>Trip list</h2>
     <ul>
-        {trips.map(trip => (
+        {data.map(trip => (
         <li key={trip.id}>
         <h3>{trip.title}</h3>
         <p>{trip.price}</p>
