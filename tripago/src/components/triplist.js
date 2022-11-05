@@ -7,13 +7,16 @@ export default function Triplist() {
     const [url, setUrl] = useState('http://localhost:3000/trips')
 
     useEffect(() => {
-        fetch ()
+        fetch (url)
         .then(response => response.json())
         .then(json => settrips(json))
 
-    }, [])
+    }, [url])
 // empty dependency array - closer look at this
 // try adding a dependency and see what happens
+// now you would need to add url as a use effect dep - pass it into the empty array
+// if react finds that the url value has changed it reruns the function
+
     console.log(trips)
 
         
