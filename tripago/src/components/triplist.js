@@ -6,17 +6,24 @@ export default function Triplist() {
     // first create some new state for url
     const [url, setUrl] = useState('http://localhost:3000/trips')
 
+    //I will create an async function here:
+    const fetchTrips = async () => {
+      const response = await fetch(url)
+      const json = await response.json()
+        settrips(json)
+      
+    }
+    // now I need to invoke this function inside the useEffect hook:
+
     useEffect(() => {
-        fetch (url)
-        .then(response => response.json())
-        .then(json => settrips(json))
+        fetchTrips()
+      }, [url])
 
-    }, [url])
-// empty dependency array - closer look at this
-// try adding a dependency and see what happens
-// now you would need to add url as a use effect dep - pass it into the empty array
-// if react finds that the url value has changed it reruns the function
+//(clear!)
 
+// now what if one of the dependencies was a function?
+// what about async - useeffect cannot be async at present
+// as may cause issues in future - a function however?
     console.log(trips)
 
         
