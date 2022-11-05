@@ -3,14 +3,17 @@ import './triplist.css'
 
 export default function Triplist() {
     const [trips, settrips] = useState([])
+    // first create some new state for url
+    const [url, setUrl] = useState('http://localhost:3000/trips')
 
     useEffect(() => {
-        fetch ('http://localhost:3000/trips')
+        fetch ()
         .then(response => response.json())
         .then(json => settrips(json))
 
     }, [])
-
+// empty dependency array - closer look at this
+// try adding a dependency and see what happens
     console.log(trips)
 
         
