@@ -1,15 +1,21 @@
 import {useState, useEffect} from 'react'
 
+
+// needs cleanup function? if unmounts need to handle this
+// abort async tasks...
+
 export const useFetch = (url) => {
     const [data, setData] = useState(null)
     const [isPending, setIsPending] = useState(false)
     const [error, setError] = useState(null)
 
     useEffect(() => {
+        const controller = new AbortController()
+
         const fetchData = async () => {
             setIsPending(true)
             try {
-                const res = await fetch(url)
+                const res = await fetch(url, {signal: controller.signal})
                 if (!res.ok) {
                     throw new Error(res.statusText)
                 }
@@ -22,13 +28,21 @@ export const useFetch = (url) => {
                 setError(null)
                 
             } catch (err) {
-                setIsPending(false)
+                if(err.name === "AbortError") {
+                    console.log("The fetch was aborted")
+                } else { 
+                    setIsPending(false)
                 setError('could not fetch the data')
-                console.log(err.message)
+               
+                }
+                
             }
          
         }
         fetchData() 
+        return () => {
+            controller.abort()
+        }
     }, [url])
 
 return {data, isPending, error}  
