@@ -10,6 +10,11 @@ const cardImages = [
 ]
 
 function App() {
+// function should do 3 things:
+// duplicate card
+// randomize using sort
+// apply id to cards as key
+
   return (
     <div className="App">
       <h1>Magic Match</h1>
