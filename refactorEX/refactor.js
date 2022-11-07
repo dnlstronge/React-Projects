@@ -19,6 +19,24 @@ function Musical() {
   })
  }
 
+// as above refactored
+
 function MusicalRefactored() {
+    const [title, setTitle] = useState( {
+        title: "Best Musical Ever"
+    })
+    const [actors, setActors] = useSTate ({
+        actors: ["George Wilson", "Tim Hughes", "Larry Clements"]
+    })
+    const [locations, setLocations] = useState( {
+        Chicago: {
+            dates: ["1/1", "2/2"],
+            address: "chigago theater"
+        },
+        sanFrancisco: {
+            dates: ["5/2"],
+            address: "sf theater"
+        }
+    })
   
 }
