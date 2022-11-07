@@ -22,21 +22,21 @@ function Musical() {
 // as above refactored
 
 function MusicalRefactored() {
-    const [title, setTitle] = useState( {
-        title: "Best Musical Ever"
-    })
-    const [actors, setActors] = useSTate ({
-        actors: ["George Wilson", "Tim Hughes", "Larry Clements"]
-    })
-    const [locations, setLocations] = useState( {
+  const [title, setTitle] = useState("Best Musical Ever")
+
+  const [actors, setActors] = useState(["George Wilson", "Tim Hughes", "Larry Clements"])
+
+  const [locations, setLocations] = useState({
         Chicago: {
             dates: ["1/1", "2/2"],
-            address: "chigago theater"
+            address: "chicago theater"
         },
-        sanFrancisco: {
+        SanFrancisco: {
             dates: ["5/2"],
             address: "sf theater"
         }
     })
   
+  
 }
+
