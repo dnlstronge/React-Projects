@@ -11,14 +11,15 @@ const cardImages = [
 
 function App() {
 // function should do 3 things:
-// duplicate card
-// randomize using sort
-// apply id to cards as key
+// duplicate card (x)
+// randomize using sort (x)
+// apply id to cards as key (x)
 const shuffleCards = () => {
   const shuffledCards = [...cardImages, ...cardImages]
   .sort(() => Math.random() - 0.5)
   // logic: will produuce sometimes + or - which is needed for sort function to determine sort position
-
+  .map((card) => ({...card, id: Math.random()}))
+  //logic: maps each item in sorted array, attaches id: random and places in a new array
 }
 
   return (
