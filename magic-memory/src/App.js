@@ -16,6 +16,9 @@ function App() {
 // apply id to cards as key
 const shuffleCards = () => {
   const shuffledCards = [...cardImages, ...cardImages]
+  .sort(() => Math.random() - 0.5)
+  // logic: will produuce sometimes + or - which is needed for sort function to determine sort position
+
 }
 
   return (
