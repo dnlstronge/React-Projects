@@ -14,6 +14,9 @@ function App() {
 // duplicate card
 // randomize using sort
 // apply id to cards as key
+const shuffleCards = () => {
+  const shuffledCards = [...cardImages, ...cardImages]
+}
 
   return (
     <div className="App">
