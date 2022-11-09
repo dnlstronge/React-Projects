@@ -2,10 +2,6 @@
 import './singleCard.css'
 
 
-
-// extract new component from app.js to create new component
-//which functions exactly the same
-
 export default function SingleCard({ card }) {
  
   return (
