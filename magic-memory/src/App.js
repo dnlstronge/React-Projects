@@ -44,14 +44,24 @@ const handleChoice = (card) => {
 //compare the two cards
 
 useEffect(() => {
+  if(choiceOne && choiceTwo) {
+    if (choiceOne.src === choiceTwo.src) {console.log("We have a Match!")
+  resetTurn()}
+    else {
+      console.log("No Match!")
+      resetTurn()
+    }
+  }
 
-}, [dependencyarray])
+}, [choiceOne, choiceTwo]) // this will fire once and then if there is a change to choice 1/2
+
 
 // want reset to fire after two choices are compared
 // how do I solve this if I place function in handle choice to compare it will fire
 // before i actually have two choices to compare?! promise ? useeffect?
 // okay went with use effect
 // Reset choices and increment turn
+// test console logs for match/notmatch (clear)
 
 const resetTurn = () => {
 setChoiceOne(null)
