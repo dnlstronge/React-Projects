@@ -13,9 +13,6 @@ const cardImages = [
 
 function App() {
 
-  //Note: next need to update state, in order to determine whether
-  // it's choice one or two, if choice one has a value then it must be
-  // choice two. I can use a ternary op for this......
 
   // Game State:
 
@@ -39,10 +36,17 @@ const shuffleCards = () => {
 
 // Handle Choice:
 
+  //Note: next need to update state, in order to determine whether
+  // it's choice one or two, if choice one has a value then it must be
+  // choice two. I can use a ternary op for this......
+
 
 const handleChoice = (card) => {
-  
+  choiceOne ? setChoiceOne(card) : setChoiceTwo(card)
 }
+
+// LOGIC: if choice one is null evals to true and calls setchoiceOne
+//if not null evals to false and calls setChoiceTwo
 
   return (
     <div className="App">
