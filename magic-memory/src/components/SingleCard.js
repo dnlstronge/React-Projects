@@ -1,13 +1,14 @@
 
 import './singleCard.css'
 
-//accept prop from app.js for flipped
-//when flipped is true it will have the flipped class
+//accepts disabled prop + conditonal added to handleclick
 
-export default function SingleCard({ card, handleChoice, flipped }) {
+export default function SingleCard({ card, handleChoice, flipped, disabled }) {
 
  const handleClick = () => {
+  if(!disabled) {
   handleChoice(card)
+  }
  }
 
   return (

@@ -20,6 +20,7 @@ const [cards, setCards] = useState([])
 const [turns, setTurns] = useState(0)
 const [choiceOne, setChoiceOne] = useState(null)
 const [choiceTwo, setChoiceTwo] = useState(null)
+const [disabled, setDisabled] = useState(false)
 
 // Shuffle Cards:
 
@@ -44,6 +45,7 @@ const handleChoice = (card) => {
 //Compare the two cards: 
 
 useEffect(() => {
+  setDisabled(true)
   if(choiceOne && choiceTwo) {
     if (choiceOne.src === choiceTwo.src) {
       setCards(prevCards => {
@@ -65,13 +67,6 @@ useEffect(() => {
 
 }, [choiceOne, choiceTwo]) 
 
-// now i want to add a delay when a card is flipped, i.e so it doesn't reset
-// to null instantly if no match is selected, settimeout?
-
-// log state 
-
-console.log(cards)
-
 
 // Reset
 
@@ -80,6 +75,7 @@ const resetTurn = () => {
 setChoiceOne(null)
 setChoiceTwo(null)
 setTurns(prevTurns => prevTurns+1)
+setDisabled(false)
 }
 
   return (
@@ -94,11 +90,16 @@ setTurns(prevTurns => prevTurns+1)
         card={card} 
         handleChoice={handleChoice}
         flipped={card === choiceOne || card === choiceTwo || card.matched}
+        disable = {disabled}
         />
         ))}
     </div> 
     </div>
   );
 }
+//now i want to add it so that when cards are clicked, clicking further
+//cards will be disabled monentarily. A disabled prop? more state?
+//added state and called setdisabled in relevant function, also need
+//have prop accepted in component
 
 export default App
