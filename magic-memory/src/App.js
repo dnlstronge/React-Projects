@@ -44,7 +44,10 @@ const handleChoice = (card) => {
       
 <div className="card-grid">
         {cards.map(card => (
-        <SingleCard key={card.id} card={card} handleChoice={handleChoice}/>
+        <SingleCard 
+        key={card.id} 
+        card={card} 
+        handleChoice={handleChoice}/>
         ))}
     </div> 
     </div>
