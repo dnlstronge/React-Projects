@@ -8,16 +8,25 @@
   border-radius: 6px;
 }
 
-/* So if you take a flat image and rotate it 90 degrees on it's Y axis it
-basically hides it, this is what is happening here as its the desired effect*/
-
+/* Front of card (picture) */
 .card .front {
   transform: rotateY(90deg);
+  transition: all ease-in 0.2s;
   position: absolute;
 }
-/* the card is still sitting in the same place due to absolute postion but I
-rotate it to 0 degrees revealing it when flipped is true */
 
 .flipped .front {
   transform: rotateY(0deg);
+  transition-delay: 0.2s;
+}
+
+/* Back of Card */
+
+.card .back {
+  transition: all ease-in 0.2s;
+  transition-delay: 0.2s;
+}
+.flipped .back {
+  transform: rotateY(90deg);
+  transition-delay: 0s;
 }

@@ -59,12 +59,14 @@ useEffect(() => {
   resetTurn()}
     else {
       
-      resetTurn()
+  setTimeout( () => resetTurn(), 1000)
     }
   }
 
 }, [choiceOne, choiceTwo]) 
 
+// now i want to add a delay when a card is flipped, i.e so it doesn't reset
+// to null instantly if no match is selected, settimeout?
 
 // log state 
 
