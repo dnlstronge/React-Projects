@@ -45,8 +45,9 @@ const handleChoice = (card) => {
 //Compare the two cards: 
 
 useEffect(() => {
-  setDisabled(true)
+  
   if(choiceOne && choiceTwo) {
+    setDisabled(true)
     if (choiceOne.src === choiceTwo.src) {
       setCards(prevCards => {
         return prevCards.map(card => {
@@ -90,7 +91,7 @@ setDisabled(false)
         card={card} 
         handleChoice={handleChoice}
         flipped={card === choiceOne || card === choiceTwo || card.matched}
-        disable = {disabled}
+        disabled = {disabled}
         />
         ))}
     </div> 
