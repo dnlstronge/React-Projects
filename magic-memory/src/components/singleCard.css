@@ -9,6 +9,7 @@
 }
 
 /* Front of card (picture) */
+
 .card .front {
   transform: rotateY(90deg);
   transition: all ease-in 0.2s;

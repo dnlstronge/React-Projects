@@ -1,7 +1,6 @@
 
 import './singleCard.css'
 
-//accepts disabled prop + conditonal added to handleclick
 
 export default function SingleCard({ card, handleChoice, flipped, disabled }) {
 

@@ -98,9 +98,6 @@ setDisabled(false)
     </div>
   );
 }
-//now i want to add it so that when cards are clicked, clicking further
-//cards will be disabled monentarily. A disabled prop? more state?
-//added state and called setdisabled in relevant function, also need
-//have prop accepted in component
+
 
 export default App
