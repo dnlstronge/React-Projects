@@ -54,13 +54,14 @@ const handleChoice = (card) => {
 // having the matched property now set as true
 //if there is no match the card is simply returned
 // the new array is the new state for the cards
+//fix error in returned array, need strict equals 
 
 useEffect(() => {
   if(choiceOne && choiceTwo) {
     if (choiceOne.src === choiceTwo.src) {
       setCards(prevCards => {
         return prevCards.map(card => {
-          if (card.src = choiceOne.src) {
+          if (card.src === choiceOne.src) {
             return {...card, matched: true}
           } else {
             return card
