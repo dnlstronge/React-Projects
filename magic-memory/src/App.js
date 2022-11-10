@@ -55,6 +55,7 @@ const handleChoice = (card) => {
 //if there is no match the card is simply returned
 // the new array is the new state for the cards
 //fix error in returned array, need strict equals 
+//log card to check it's working (clear): output new array with property changed on match
 
 useEffect(() => {
   if(choiceOne && choiceTwo) {
@@ -68,6 +69,7 @@ useEffect(() => {
           }
         })
       })
+
   resetTurn()}
     else {
       
@@ -76,6 +78,14 @@ useEffect(() => {
   }
 
 }, [choiceOne, choiceTwo]) 
+
+
+// log state 
+
+console.log(cards)
+
+
+// Reset
 
 
 const resetTurn = () => {
