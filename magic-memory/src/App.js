@@ -3,18 +3,18 @@ import './App.css'
 import SingleCard from './components/SingleCard'
 
 const cardImages = [
-  {"src" : "/img/helmet-1.png"},
-  {"src" : "/img/potion-1.png"},
-  {"src" : "/img/ring-1.png"},
-  {"src" : "/img/scroll-1.png"},
-  {"src" : "/img/shield-1.png"},
-  {"src" : "/img/sword-1.png"},
+  {"src" : "/img/helmet-1.png", matched: false},
+  {"src" : "/img/potion-1.png", matched: false},
+  {"src" : "/img/ring-1.png", matched: false},
+  {"src" : "/img/scroll-1.png", matched: false},
+  {"src" : "/img/shield-1.png", matched: false},
+  {"src" : "/img/sword-1.png", matched: false},
 ]
 
 function App() {
 
 
-  // Game State:
+// Game State:
 
 const [cards, setCards] = useState([])
 const [turns, setTurns] = useState(0)
@@ -41,27 +41,41 @@ const handleChoice = (card) => {
 
 }
 
-//compare the two cards
+//Compare the two cards: 
+
+// if the cards match will need to do something:
+// this is where I will update the 'matched' property i've just added to the
+// objects in the cardimages array
+
+//map a new array which contains all the same cards but two will have the matched
+//property set to true. 
+
+// used conditional so if card src matches a new array is returned with any match
+// having the matched property now set as true
+//if there is no match the card is simply returned
+// the new array is the new state for the cards
 
 useEffect(() => {
   if(choiceOne && choiceTwo) {
-    if (choiceOne.src === choiceTwo.src) {console.log("We have a Match!")
+    if (choiceOne.src === choiceTwo.src) {
+      setCards(prevCards => {
+        return prevCards.map(card => {
+          if (card.src = choiceOne.src) {
+            return {...card, matched: true}
+          } else {
+            return card
+          }
+        })
+      })
   resetTurn()}
     else {
-      console.log("No Match!")
+      
       resetTurn()
     }
   }
 
-}, [choiceOne, choiceTwo]) // this will fire once and then if there is a change to choice 1/2
+}, [choiceOne, choiceTwo]) 
 
-
-// want reset to fire after two choices are compared
-// how do I solve this if I place function in handle choice to compare it will fire
-// before i actually have two choices to compare?! promise ? useeffect?
-// okay went with use effect
-// Reset choices and increment turn
-// test console logs for match/notmatch (clear)
 
 const resetTurn = () => {
 setChoiceOne(null)
