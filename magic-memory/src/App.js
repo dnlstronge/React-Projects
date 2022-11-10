@@ -12,12 +12,19 @@ const cardImages = [
 ]
 
 function App() {
-  //create state for card choices:
+
+  //Note: next need to update state, in order to determine whether
+  // it's choice one or two, if choice one has a value then it must be
+  // choice two. I can use a ternary op for this......
+
+  // Game State:
 
 const [cards, setCards] = useState([])
 const [turns, setTurns] = useState(0)
 const [choiceOne, setChoiceOne] = useState(null)
 const [choiceTwo, setChoiceTwo] = useState(null)
+
+// Shuffle Cards:
 
 const shuffleCards = () => {
   
@@ -29,12 +36,12 @@ const shuffleCards = () => {
   setTurns(0)
  
 }
-// handle user choice here
 
-//will take card as an argument: 
-// & pass this in as a prop to SingleCard component
+// Handle Choice:
+
+
 const handleChoice = (card) => {
-  console.log(card) // tests if clicking on back card logs onclick event (clear)
+  
 }
 
   return (
