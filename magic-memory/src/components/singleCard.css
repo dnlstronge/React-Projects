@@ -15,6 +15,9 @@ basically hides it, this is what is happening here as its the desired effect*/
   transform: rotateY(90deg);
   position: absolute;
 }
+/* the card is still sitting in the same place due to absolute postion but I
+rotate it to 0 degrees revealing it when flipped is true */
+
 .flipped .front {
   transform: rotateY(0deg);
 }
