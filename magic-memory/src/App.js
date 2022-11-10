@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import SingleCard from './components/SingleCard'
 
@@ -36,35 +36,29 @@ const shuffleCards = () => {
 
 // Handle Choice:
 
-  //Note: next need to update state, in order to determine whether
-  // it's choice one or two, if choice one has a value then it must be
-  // choice two. I can use a ternary op for this......
-
-
 const handleChoice = (card) => {
   choiceOne ? setChoiceTwo(card) : setChoiceOne(card)
+
 }
 
-// LOGIC: if choice one is null evals to true and calls setchoiceOne
-//if not null evals to false and calls setChoiceTwo
-/* oops, other way round so:
+//compare the two cards
 
-when its first called the state will be null,
-null compared to a value(which I have for setstate) will evaluate to
-false, and because null is involved I want to update choice one,
-so the ternary should update choice one on false
+useEffect(() => {
 
-next: choiceone now has a value as the state has been updated as above
-so when next handlechoice is called, I am comparing a value with a value
-null is not involved, comparing a value to a value will evaluate to true and the ternary
-should update choice two if true.
+}, [dependencyarray])
 
-put another way, because I will always have a value from onclick: 'card'
-I will never be comparing null to null. therefore the ternary op needs
-to account for this. it will only eval to true when I have two values
-and that is how I know which state to update.
+// want reset to fire after two choices are compared
+// how do I solve this if I place function in handle choice to compare it will fire
+// before i actually have two choices to compare?! promise ? useeffect?
+// okay went with use effect
+// Reset choices and increment turn
 
-*/
+const resetTurn = () => {
+setChoiceOne(null)
+setChoiceTwo(null)
+setTurns(prevTurns => prevTurns+1)
+}
+
   return (
     <div className="App">
       <h1>Magic Match</h1>
