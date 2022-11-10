@@ -30,6 +30,10 @@ const shuffleCards = () => {
   .sort(() => Math.random() - 0.5)
   .map((card) => ({...card, id: Math.random()}))
 
+  //just incase a card has been selected:
+  setChoiceOne(null)
+  setChoiceTwo(null)
+
   setCards(shuffledCards)
   setTurns(0)
  
@@ -78,6 +82,8 @@ setChoiceTwo(null)
 setTurns(prevTurns => prevTurns+1)
 setDisabled(false)
 }
+//have the game load on initialisation
+useEffect(() => {shuffleCards()}, [])
 
   return (
     <div className="App">
@@ -95,9 +101,10 @@ setDisabled(false)
         />
         ))}
     </div> 
+    <p>Turns: {turns}</p>
     </div>
   );
 }
 
-
+//display turn state
 export default App
