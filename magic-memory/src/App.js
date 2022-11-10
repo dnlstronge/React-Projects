@@ -43,20 +43,6 @@ const handleChoice = (card) => {
 
 //Compare the two cards: 
 
-// if the cards match will need to do something:
-// this is where I will update the 'matched' property i've just added to the
-// objects in the cardimages array
-
-//map a new array which contains all the same cards but two will have the matched
-//property set to true. 
-
-// used conditional so if card src matches a new array is returned with any match
-// having the matched property now set as true
-//if there is no match the card is simply returned
-// the new array is the new state for the cards
-//fix error in returned array, need strict equals 
-//log card to check it's working (clear): output new array with property changed on match
-
 useEffect(() => {
   if(choiceOne && choiceTwo) {
     if (choiceOne.src === choiceTwo.src) {
@@ -104,11 +90,20 @@ setTurns(prevTurns => prevTurns+1)
         <SingleCard 
         key={card.id} 
         card={card} 
-        handleChoice={handleChoice}/>
+        handleChoice={handleChoice}
+        flipped={card === choiceOne || card === choiceTwo || card.matched}
+        />
         ))}
     </div> 
     </div>
   );
 }
-
+/* now I want to implement card flips, e.g show back of card which flips
+ to reveal image, if matches stays flipped if not flips back
+im going to need a prop for flipped
+flipped will be true or false, true if one of 3 things applies:
+(1)the card iterated matches choiceOne
+(2)the card iterated matches choiceTwo
+(3)the card has already been matched (access matched property)
+*/
 export default App
