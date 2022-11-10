@@ -34,7 +34,7 @@ const shuffleCards = () => {
 //will take card as an argument: 
 // & pass this in as a prop to SingleCard component
 const handleChoice = (card) => {
-  console.log(card)
+  console.log(card) // tests if clicking on back card logs onclick event (clear)
 }
 
   return (
