@@ -7,3 +7,14 @@
   border: 2px solid #fff;
   border-radius: 6px;
 }
+
+/* So if you take a flat image and rotate it 90 degrees on it's Y axis it
+basically hides it, this is what is happening here as its the desired effect*/
+
+.card .front {
+  transform: rotateY(90deg);
+  position: absolute;
+}
+.flipped .front {
+  transform: rotateY(0deg);
+}

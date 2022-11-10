@@ -98,12 +98,5 @@ setTurns(prevTurns => prevTurns+1)
     </div>
   );
 }
-/* now I want to implement card flips, e.g show back of card which flips
- to reveal image, if matches stays flipped if not flips back
-im going to need a prop for flipped
-flipped will be true or false, true if one of 3 things applies:
-(1)the card iterated matches choiceOne
-(2)the card iterated matches choiceTwo
-(3)the card has already been matched (access matched property)
-*/
+
 export default App
