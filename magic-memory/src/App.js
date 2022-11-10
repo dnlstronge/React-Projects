@@ -42,12 +42,29 @@ const shuffleCards = () => {
 
 
 const handleChoice = (card) => {
-  choiceOne ? setChoiceOne(card) : setChoiceTwo(card)
+  choiceOne ? setChoiceTwo(card) : setChoiceOne(card)
 }
 
 // LOGIC: if choice one is null evals to true and calls setchoiceOne
 //if not null evals to false and calls setChoiceTwo
+/* oops, other way round so:
 
+when its first called the state will be null,
+null compared to a value(which I have for setstate) will evaluate to
+false, and because null is involved I want to update choice one,
+so the ternary should update choice one on false
+
+next: choiceone now has a value as the state has been updated as above
+so when next handlechoice is called, I am comparing a value with a value
+null is not involved, comparing a value to a value will evaluate to true and the ternary
+should update choice two if true.
+
+put another way, because I will always have a value from onclick: 'card'
+I will never be comparing null to null. therefore the ternary op needs
+to account for this. it will only eval to true when I have two values
+and that is how I know which state to update.
+
+*/
   return (
     <div className="App">
       <h1>Magic Match</h1>
