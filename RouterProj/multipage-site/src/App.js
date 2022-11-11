@@ -16,7 +16,7 @@ function App() {
         </nav>
 
     <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <Home/>
         </Route>
         <Route path="/about">
