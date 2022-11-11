@@ -1,5 +1,5 @@
 import './App.css'
-import {BrowserRouter, Route} from 'react-router-dom'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
 // Page comps
 import About from './pages/About';
@@ -14,6 +14,8 @@ function App() {
         <nav>
           <h1>My Articles</h1>
         </nav>
+
+    <Switch>
         <Route path="/">
           <Home/>
         </Route>
@@ -23,7 +25,10 @@ function App() {
         <Route path="/contact">
           <Contact/>
         </Route>
+    </Switch>
+
     </BrowserRouter>
+
     </div>
   );
 }
