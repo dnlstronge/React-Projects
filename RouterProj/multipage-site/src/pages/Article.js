@@ -8,18 +8,15 @@ export default function Articles() {
 const {id} = useParams()
 const url = "http://localhost:3000/articles/" + id
 const {data: article, isPending, error} = useFetch(url)
-const history = useHistory() //returns an obj which can be used - has different methods on it which are useful
+const history = useHistory() 
 
 useEffect(() => {
   if(error) {
-    //redirect user - could use .goBack but for this .push is better
-    // this will happen isntantly so perhaps a delay so the error message can be read
    setTimeout(() => {
-    history.push("/") //after 2 secs pushes a different route.
+    history.push("/") 
   }, 2000)
   }
-}, [, history]) //outsidefunction must be declared as a dependency
-
+}, [, history])
   return (
     <div>
     {isPending && <div>Loading...</div>}
