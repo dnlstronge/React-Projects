@@ -5,6 +5,7 @@ import {BrowserRouter, Route, Switch, NavLink} from 'react-router-dom'
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
+import Article from './pages/Article';
 
 
 function App() {
@@ -27,6 +28,9 @@ function App() {
         </Route>
         <Route path="/contact">
           <Contact/>
+        </Route>
+        <Route >
+          <Article />
         </Route>
     </Switch>
 
