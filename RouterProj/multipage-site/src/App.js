@@ -29,7 +29,7 @@ function App() {
         <Route path="/contact">
           <Contact/>
         </Route>
-        <Route >
+        <Route path="/articles/:id"> 
           <Article />
         </Route>
     </Switch>
@@ -39,5 +39,5 @@ function App() {
     </div>
   );
 }
-
+// ':' tells react router that the value proceeding is a changable part of the route
 export default App
