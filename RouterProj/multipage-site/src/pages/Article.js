@@ -1,23 +1,24 @@
 
 import { useParams } from "react-router-dom"
+import { useFetch } from "../hooks/useFetch"
 
-// need to extract route parameter in order to get data for each article
 
 export default function Articles() {
 const {id} = useParams()
+const url = "http://localhost:3000/articles/" + id
+const {data: article, isPending, error} = useFetch(url)
 
-
-/*
-
-above: 
-params-----> object from useParams
-params.id-----> accesses the id parameter because in route I called it ':id'
-variable(ref to UseParams obj).id(:couldbecalledanything)
-
-params.id CAN BE DESTRUCTURED so const params becomes const {id}!
-
-*/
   return (
-    <div>Article Page - {id}</div> // destructured
+    <div>
+    {isPending && <div>Loading...</div>}
+    {error && <div>{error}</div>}
+    {article && (<div>
+      <h2>{article.title}</h2>
+      <p> By {article.author}</p>
+      <p>{article.body}</p>
+
+    </div>
+    )}
+    </div> 
   )
 }
