@@ -18,7 +18,7 @@ useEffect(() => {
     history.push("/") //after 2 secs pushes a different route.
   }, 2000)
   }
-}, [error])
+}, [, history]) //outsidefunction must be declared as a dependency
 
   return (
     <div>
