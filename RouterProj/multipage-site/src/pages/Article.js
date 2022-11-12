@@ -16,7 +16,7 @@ useEffect(() => {
     history.push("/") 
   }, 2000)
   }
-}, [, history])
+}, [error, history])
   return (
     <div>
     {isPending && <div>Loading...</div>}
