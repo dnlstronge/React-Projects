@@ -19,13 +19,22 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
-            <Route>
+            <Route exact path="/">
               <Home />
+            </Route>
+            <Route path="/create">
+              <Create />
+            </Route>
+            <Route path="/search">
+              <Search />
+            </Route>
+            <Route path="/recipes/:id"> 
+              <Recipe />
             </Route>
           </Switch>
       </BrowserRouter>
     </div>
   );
 }
-
+// made recipes mutable
 export default App
