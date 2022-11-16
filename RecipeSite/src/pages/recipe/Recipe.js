@@ -1,7 +1,9 @@
 import { useParams } from 'react-router-dom'
-import RecipeList from '../../components/RecipeList.js';
+
 import { UseFetch } from '../../hooks/UseFetch.js'
+
 //styles
+
 import './Recipe.css'
 
 
