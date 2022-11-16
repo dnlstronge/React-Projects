@@ -21,7 +21,7 @@ console.log(title, method, cookingTime)
 //tested in console: above function logs as expected
 
   return (
-    <div className='create'>create
+    <div className='create'>
     <h2 className='page-title'>Add a new recipe:</h2>
 
     <form onSubmit={handleSubmit}>
