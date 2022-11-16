@@ -1,13 +1,8 @@
 import { useState } from 'react'
-import Recipe from '../recipe/Recipe'
+
 
 // styles
 import './Create.css'
-
-
-// I will be creating a form
-// first  need 3 pieces of state: title, method, cooking time
-// will deal with ingredients later
 
 
 
@@ -17,13 +12,19 @@ export default function Create() {
 const [title, setTitle] = useState('')
 const [method, setMethod] = useState('')
 const [cookingTime, setCookingTime] = useState('')
-
+const handleSubmit = (e) => {
+  e.preventDefault()
+console.log(title, method, cookingTime)
+}
+// need to prevent default?
+//i will create log for now
+//tested in console: above function logs as expected
 
   return (
     <div className='create'>create
     <h2 className='page-title'>Add a new recipe:</h2>
 
-    <form>
+    <form onSubmit={handleSubmit}>
       <label>
         <span>Recipe title:</span>
         <input
@@ -33,6 +34,9 @@ const [cookingTime, setCookingTime] = useState('')
           required
           />
       </label>
+
+      {/* Add ingredients here!  */}
+
       <label>
         <span>Recipe method:</span>
         <textarea
