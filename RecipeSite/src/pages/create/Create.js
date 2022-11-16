@@ -1,3 +1,4 @@
+// imports
 import { useState } from 'react'
 
 
@@ -5,7 +6,7 @@ import { useState } from 'react'
 import './Create.css'
 
 
-
+//comp:
 
 export default function Create() {
 
@@ -16,9 +17,7 @@ const handleSubmit = (e) => {
   e.preventDefault()
 console.log(title, method, cookingTime)
 }
-// need to prevent default?
-//i will create log for now
-//tested in console: above function logs as expected
+
 
   return (
     <div className='create'>
