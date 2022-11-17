@@ -24,7 +24,7 @@ export const UseFetch = (url, method="GET") => {
   useEffect(() => {
     const controller = new AbortController()
 
-    const fetchData = async () => {
+    const fetchData = async (fetchOptions) => {
       setIsPending(true)
       
       try {
@@ -46,8 +46,15 @@ export const UseFetch = (url, method="GET") => {
         }
       }
     }
-
+    if (method === "GET") {
     fetchData()
+  }
+    if (method === "POST" && options) {
+      fetchData(options)
+    }
+
+// conditionals determine whether fetch or get, need to define
+// fetch options up in fetchData.
 
     return () => {
       controller.abort()
