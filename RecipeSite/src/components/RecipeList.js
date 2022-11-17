@@ -23,5 +23,3 @@ if (recipes.length === 0) {
     </div>
   )
 }
-//note && is no longer required as there will only ever be data
-//as determined in home.js template
