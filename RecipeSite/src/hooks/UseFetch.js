@@ -55,5 +55,7 @@ export const UseFetch = (url, method="GET") => {
 
   }, [url])
 
-  return { data, isPending, error }
+  return { data, isPending, error, postData }
 }
+
+//postData is the function I will invoke in the create component when user submits the form 
