@@ -49,7 +49,7 @@ useEffect( () => {
   if(data) {
     history.push('/')
   }
-}, [data])
+}, [data, history])
 
 
 
