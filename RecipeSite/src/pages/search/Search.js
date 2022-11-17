@@ -18,6 +18,8 @@ const query = queryParams.get('q')
 // query gets the value of query parameter
 // send a request with useFetch to get whatever matches the param
 // need an endpoint (creat var to store it)
+// need to access search property on query string otherwise function will not work
+// this was the logic behind returning an object.
 
 const url = "http://localhost:3000/recipes?q=" + query
 const {error, isPending, data} = UseFetch(url)
