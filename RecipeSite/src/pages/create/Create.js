@@ -18,11 +18,6 @@ export default function Create() {
   const [ingredients, setIngredients] = useState([])
   const ingredientInput = useRef(null)
 
-// handleSubmit will handle POST
-// first import UseFetch
-// grab postdata
-// needs endpoint from server
-// needs a second argument or will default to GET
 
   const {postData, data, error} = UseFetch('http://localhost:3000/recipes', 'POST')
 
