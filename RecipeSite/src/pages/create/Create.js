@@ -24,11 +24,11 @@ export default function Create() {
 // needs endpoint from server
 // needs a second argument or will default to GET
 
-  const {postData, data, error} = UseFetch('http://localhost:3000/recipes')
+  const {postData, data, error} = UseFetch('http://localhost:3000/recipes', 'POST')
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(title, method, cookingTime, ingredients)
+    postData({title, ingredients, method, cookingTime: cookingTime + ' minutes'})
   }
 
   const handleAdd = (e) => {
