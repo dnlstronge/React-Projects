@@ -1,5 +1,6 @@
 // imports
 import { useState, useRef } from 'react'
+import { UseFetch } from '../../hooks/UseFetch'
 
 
 // styles
@@ -10,30 +11,38 @@ import './Create.css'
 
 export default function Create() {
 
-const [title, setTitle] = useState('')
-const [method, setMethod] = useState('')
-const [cookingTime, setCookingTime] = useState('')
-const [newIngredient, setNewIngredient] = useState('')
-const [ingredients, setIngredients] = useState([])
-const ingredientInput = useRef(null)
+  const [title, setTitle] = useState('')
+  const [method, setMethod] = useState('')
+  const [cookingTime, setCookingTime] = useState('')
+  const [newIngredient, setNewIngredient] = useState('')
+  const [ingredients, setIngredients] = useState([])
+  const ingredientInput = useRef(null)
 
+// handleSubmit will handle POST
+// first import UseFetch
+// grab postdata
+// needs endpoint from server
+// needs a second argument or will default to GET
 
+  const {postData, data, error} = UseFetch('http://localhost:3000/recipes')
 
-const handleSubmit = (e) => {
-  e.preventDefault()
-console.log(title, method, cookingTime, ingredients)
-}
-const handleAdd = (e) => {
-  e.preventDefault()
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(title, method, cookingTime, ingredients)
+  }
+
+  const handleAdd = (e) => {
+    e.preventDefault()
+
   const ing = newIngredient.trim()
 
-  if (ing && !ingredients.includes(ing)) {
-  setIngredients(prevIngredients => [...prevIngredients, ing ])
-  }
-  setNewIngredient('')
-  ingredientInput.current.focus()
+    if (ing && !ingredients.includes(ing)) {
+      setIngredients(prevIngredients => [...prevIngredients, ing ])
+      }
+    setNewIngredient('')
+    ingredientInput.current.focus()
 
-}
+  }
 
   return (
     <div className='create'>
