@@ -1,14 +1,11 @@
 import { useState, useEffect } from "react"
 
 
-// need to set up this hook to accept POST reqs.....
-// add method with default of GET (can manually be changed to POSt)
-
 export const UseFetch = (url, method="GET") => {
   const [data, setData] = useState(null)
   const [isPending, setIsPending] = useState(false)
   const [error, setError] = useState(null)
-//create some state
+
   const [options, setOptions] = useState(null)
 
   const postData = (postData) => {
@@ -18,8 +15,7 @@ export const UseFetch = (url, method="GET") => {
         "content-type": "application/json"
       },
       body: JSON.stringify(postData)
-    })} //will invoke when page is created
-  // takes an argument of postData to update options state
+    })} 
 
   useEffect(() => {
     const controller = new AbortController()
@@ -28,7 +24,7 @@ export const UseFetch = (url, method="GET") => {
       setIsPending(true)
       
       try {
-        const res = await fetch(url, { signal: controller.signal })
+        const res = await fetch(url, {...fetchOptions, signal: controller.signal })
         if(!res.ok) {
           throw new Error(res.statusText)
         }
@@ -53,16 +49,13 @@ export const UseFetch = (url, method="GET") => {
       fetchData(options)
     }
 
-// conditionals determine whether fetch or get, need to define
-// fetch options up in fetchData.
 
     return () => {
       controller.abort()
     }
 
-  }, [url])
+  }, [url, options, method])
 
   return { data, isPending, error, postData }
 }
 
-//postData is the function I will invoke in the create component when user submits the form 

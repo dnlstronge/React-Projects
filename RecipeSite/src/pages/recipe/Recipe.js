@@ -29,5 +29,3 @@ export default function Recipe() {
     </div>
   )
 }
-// i've used ing(ingredients[i] as a key as later I will implement to prevent duplicates
-// they key will therefore be unique

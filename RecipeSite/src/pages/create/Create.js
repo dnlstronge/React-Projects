@@ -50,10 +50,6 @@ const handleAdd = (e) => {
           />
       </label>
 
-{/*Add ref for ingredientInput and remember to import useref!
-ingredients now functions as added. Now I want to output entries below indgredients so
-the user knows what they have added, and also some css to make it look a bit better.  
-*/}
 
       <label>
         <span>Recipe ingredients:</span>
