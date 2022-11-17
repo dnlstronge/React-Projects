@@ -2,6 +2,8 @@ import { Context, createContext} from "react";
 
 export const ThemeContext = createContext()
 
-function ThemeProvider () {}
+export function ThemeProvider( {children}) {
+    return <ThemeContext value={{color: blue}}> {children} </ThemeContext>
+}
 
 
