@@ -1,9 +1,25 @@
 import { useState, useEffect } from "react"
 
-export const UseFetch = (url) => {
+
+// need to set up this hook to accept POST reqs.....
+// add method with default of GET (can manually be changed to POSt)
+
+export const UseFetch = (url, method="GET") => {
   const [data, setData] = useState(null)
   const [isPending, setIsPending] = useState(false)
   const [error, setError] = useState(null)
+//create some state
+  const [options, setOptions] = useState(null)
+
+  const postData = (postData) => {
+    setOptions({
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(postData)
+    })} //will invoke when page is created
+  // takes an argument of postData to update options state
 
   useEffect(() => {
     const controller = new AbortController()
