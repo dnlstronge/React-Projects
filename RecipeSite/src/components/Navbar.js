@@ -27,7 +27,7 @@ const { color, changeColor } = useTheme()
 
   return (
     <div className='navbar' style={{background: color}}>
-      <nav onClick={() => changeColor('pink')}>
+      <nav>
       <Link className='brand' to="/">
         <h1>Cooking Stuff!</h1>
       </Link>
