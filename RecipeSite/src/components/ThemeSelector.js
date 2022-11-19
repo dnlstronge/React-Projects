@@ -37,7 +37,10 @@ const { changeColor, changeMode, mode } = useTheme()
 
       <img
       onClick={toggleMode}
-      src={modeIcon}/>
+      src={modeIcon}
+      alt="dark/light toggle icon"
+      style={{filter: mode === 'dark' ? 'invert(100%)' : 'invert(20%)'}}
+      />
       
     </div>
 
