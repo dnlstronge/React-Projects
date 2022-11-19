@@ -1,6 +1,4 @@
-// I am a custom hook
-// Checks that everything is ok, e.g it exists
-// and exports to navbar if it does
+
 
 import { ThemeContext } from '../context/ThemeContext';
 import { useContext } from 'react';
