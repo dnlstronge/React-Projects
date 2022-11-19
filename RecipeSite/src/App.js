@@ -1,5 +1,6 @@
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import {ThemeSelector} from './components/ThemeSelector';
 
 // styles
 
@@ -20,7 +21,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navbar />
-
+        <ThemeSelector /> 
         <Switch>
             <Route exact path="/">
               <Home />

@@ -10,7 +10,7 @@ import './Navbar.css';
 
 import Searchbar from './Searchbar';
 
-// hooks
+// hooks (gives access to useTheme obj)
 import { useTheme } from '../hooks/useTheme';
 
 
@@ -20,7 +20,10 @@ export default function Navbar() {
 
 const { color, changeColor } = useTheme()  
 // destructuring of obj passed through useTheme
-// the return statement outputs the template
+// the return statement outputs the template, 
+// in template background is set to 'color'
+// basically you are using the object to output template
+
 
   return (
     <div className='navbar' style={{background: color}}>

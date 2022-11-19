@@ -30,8 +30,10 @@ const themeReducer = (state, action) => {
 export function ThemeProvider( {children}) {
 
     const [state, dispatch] = useReducer(themeReducer, {
-        color: "blue"
+        color: "#58249c"
     })
+// Default 'color'
+
 
     const changeColor = (color) => {
         dispatch({type: "CHANGE_COLOR", payload: color})
@@ -44,5 +46,7 @@ export function ThemeProvider( {children}) {
     {children} 
     </ThemeContext.Provider>
 )}
+
+//above: context in which the state and function can be used (see index for scope: App)
 
 
