@@ -16,7 +16,8 @@ export function ThemeSelector() {
 // toggle dark mode
 
 const toggleMode = () => {
-  changeMode(mode === 'dark' ? 'light' : 'dark')  
+  changeMode(mode === 'dark' ? 'light' : 'dark') 
+  console.log(mode) 
 }
 
 //logic for function: fired on click, if mode is dark return light, if mode is not dark, return dark
@@ -33,10 +34,11 @@ const { changeColor, changeMode, mode } = useTheme()
     <div className="theme-selector">
 
     <div className="mode-toggle">
-      <image 
+
+      <img
       onClick={toggleMode}
-      src={modeIcon} 
-      />
+      src={modeIcon}/>
+      
     </div>
 
     <div className="theme-buttons">
