@@ -1,7 +1,8 @@
 // imports
 import { useState, useRef, useEffect } from 'react'
-import { UseFetch } from '../../hooks/UseFetch'
 import { useHistory } from 'react-router-dom'
+import { projectFirestore } from '../../firebase/config.js'
+
 
 
 // styles
@@ -21,12 +22,16 @@ export default function Create() {
   const history = useHistory()
   
 
-
-  const {postData, data, error} = UseFetch('http://localhost:3000/recipes', 'POST')
+//removed useFetch
+// remove function call in handlesubmit but keep as obj
+// it is this obj which I want to save to DB (firebase)
+// add doc(obj) to firestore db
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    postData({title, ingredients, method, cookingTime: cookingTime + ' minutes'})
+    const doc = { title, ingredients, method, cookingTime: cookingTime + ' minutes' }
+
+    projectFirestore.collection('recipes').add(doc)
   }
 
   const handleAdd = (e) => {
