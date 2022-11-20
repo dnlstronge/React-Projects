@@ -8,12 +8,13 @@ import { useTheme } from '../../hooks/useTheme.js'
 
 import './Recipe.css'
 
+//remove json server access point (now using firebase)
+// keep 3 pieces of state
 
 export default function Recipe() {
   const { mode } = useTheme()
   const { id } = useParams()
-  const url = "http://localhost:3000/recipes/" +id;
-  const {error, isPending, data: recipe} = UseFetch(url)
+ 
 
   return (
     <div className={`recipe ${mode}`}>
