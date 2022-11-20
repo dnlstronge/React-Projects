@@ -36,7 +36,7 @@ export default function Home() {
       setIsPending(false)
     })
 
-  }, [])
+  }, [error.message])
 
   return (
     <div className='home'>

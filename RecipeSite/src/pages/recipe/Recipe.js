@@ -28,10 +28,18 @@ export default function Recipe() {
       setIsPending(true)
 //returns a promise:
       projectFirestore.collection('recipes').doc(id).get().then((doc) => {
-        console.log(doc)
-      })
+        if(doc.exists) {
+          setIsPending(false)
 
-    }, [])
+          //function creates a JS obj
+          setRecipe(doc.data())
+        } else {
+          setIsPending(false)
+          setError('Recipe not found')
+        }
+      })
+// id is an outside var and needs to be added to dep array, even though wont change
+    }, [id])
 
  
 
