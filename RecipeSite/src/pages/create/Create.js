@@ -22,10 +22,6 @@ export default function Create() {
   const history = useHistory()
   
 
-//removed useFetch
-// remove function call in handlesubmit but keep as obj
-// it is this obj which I want to save to DB (firebase)
-// add doc(obj) to firestore db
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -53,13 +49,7 @@ export default function Create() {
    
 
   }
-  // redirect the user when there is a data response
 
-useEffect( () => {
-  if(data) {
-    history.push('/')
-  }
-}, [data, history])
 
 
 
