@@ -27,11 +27,16 @@ export default function Create() {
 // it is this obj which I want to save to DB (firebase)
 // add doc(obj) to firestore db
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const doc = { title, ingredients, method, cookingTime: cookingTime + ' minutes' }
-
-    projectFirestore.collection('recipes').add(doc)
+    try {
+    await projectFirestore.collection('recipes').add(doc)
+    // after above has finished push user back: 
+    history.push('/')
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   const handleAdd = (e) => {
