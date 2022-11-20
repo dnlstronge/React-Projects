@@ -11,34 +11,30 @@ import { useEffect, useState } from 'react'
 
 import './Recipe.css'
 
-//remove json server access point (now using firebase)
-// bring in 3 pieces of state
 
 export default function Recipe() {
     const { mode } = useTheme()
-    const { id } = useParams() // this now grabs the firestore id
+    const { id } = useParams() 
 
 
-    // change data/setdata to recipe/setRecipe and should work:
+  
     const [recipe, setRecipe] = useState(null)
     const [isPending, setIsPending] = useState(false)
     const [error, setError] = useState(false)
 
     useEffect(() => {
       setIsPending(true)
-//returns a promise:
+
       projectFirestore.collection('recipes').doc(id).get().then((doc) => {
         if(doc.exists) {
           setIsPending(false)
-
-          //function creates a JS obj
           setRecipe(doc.data())
         } else {
           setIsPending(false)
           setError('Recipe not found')
         }
       })
-// id is an outside var and needs to be added to dep array, even though wont change
+
     }, [id])
 
  
