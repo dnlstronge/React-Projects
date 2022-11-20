@@ -8,4 +8,12 @@ const firebaseConfig = {
     storageBucket: "cooking-stuff-dnls.appspot.com",
     messagingSenderId: "897180450694",
     appId: "1:897180450694:web:bbb001b7a34150d8877607"
-  };
+  }
+
+  //initialize firebase
+  firebase.initializeApp(firebaseConfig)
+
+  //initialize services
+  const projectFirestore = firebase.firestore()
+
+  export { projectFirestore }
