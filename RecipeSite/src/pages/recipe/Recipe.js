@@ -1,19 +1,38 @@
+
 import { useParams } from 'react-router-dom'
+import { projectFirestore } from '../../firebase/config.js'
 
 // hooks 
-import { UseFetch } from '../../hooks/UseFetch.js'
+
 import { useTheme } from '../../hooks/useTheme.js'
+import { useEffect, useState } from 'react'
 
 //styles
 
 import './Recipe.css'
 
 //remove json server access point (now using firebase)
-// keep 3 pieces of state
+// bring in 3 pieces of state
 
 export default function Recipe() {
-  const { mode } = useTheme()
-  const { id } = useParams()
+    const { mode } = useTheme()
+    const { id } = useParams() // this now grabs the firestore id
+
+
+    // change data/setdata to recipe/setRecipe and should work:
+    const [recipe, setRecipe] = useState(null)
+    const [isPending, setIsPending] = useState(false)
+    const [error, setError] = useState(false)
+
+    useEffect(() => {
+      setIsPending(true)
+//returns a promise:
+      projectFirestore.collection('recipes').doc(id).get().then((doc) => {
+        console.log(doc)
+      })
+
+    }, [])
+
  
 
   return (
