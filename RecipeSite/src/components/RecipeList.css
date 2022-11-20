@@ -53,6 +53,9 @@
     cursor: pointer;
     filter: invert(60%);
 }
+.delete:hover {
+    transform: rotate(-6deg);
+}
 
 /* The darkside..... */
 

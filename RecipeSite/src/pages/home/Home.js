@@ -18,8 +18,11 @@ export default function Home() {
 
   useEffect( () => {
     setIsPending(true)
+// want not only to get but to watch data in RT: realtime listener 
+// delete catch block as errors will be dealt with differently in RT
+// also no get or then methods: replace with onSnapshot
 
-    projectFirestore.collection('recipes').get().then((snapshot) => {
+    const unsub = projectFirestore.collection('recipes').onSnapshot((snapshot) => {
       if(snapshot.empty) {
         setError('No recipes to load...')
         setIsPending(false)
@@ -31,12 +34,14 @@ export default function Home() {
         setData(results)
         setIsPending(false)
       }
-    }).catch(err => {
-      setError(error.message)
+    }, (err) => {
+      setError(err.message)
       setIsPending(false)
     })
-
-  }, [error.message])
+// need to clean up though:
+    return () => unsub()
+// if user goes to another page it unsubs from the RT listener
+  }, [])
 
   return (
     <div className='home'>
