@@ -1,5 +1,5 @@
 // imports
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, } from 'react'
 import { useHistory } from 'react-router-dom'
 import { projectFirestore } from '../../firebase/config.js'
 
@@ -28,6 +28,7 @@ export default function Create() {
     const doc = { title, ingredients, method, cookingTime: cookingTime + ' minutes' }
     try {
     await projectFirestore.collection('recipes').add(doc)
+    
     // after above has finished push user back: 
     history.push('/')
     } catch (err) {
