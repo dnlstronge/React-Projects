@@ -45,6 +45,18 @@
     margin: 20px auto 0;
 
 }
+
+.delete {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    filter: invert(60%);
+}
+
+/* The darkside..... */
+
+
 .recipe-list .card.dark {
     background: #555;
 }
