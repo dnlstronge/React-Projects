@@ -51,6 +51,7 @@ export default function Recipe() {
         {recipe.ingredients.map(ing => <li key={ing}>{ing}</li>)} 
       </ul>
       <p className="method">{recipe.method}</p>
+      <button>Update me</button>
     </> )}
     
     </div>
