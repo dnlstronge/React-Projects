@@ -1,6 +1,6 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-//comps
+//pages & comps
 
 import { Home } from "./pages/home/Home"
 import { Login } from "./pages/login/Login"
