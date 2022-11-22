@@ -25,7 +25,7 @@ export default function Recipe() {
     useEffect(() => {
       setIsPending(true)
 
-      projectFirestore.collection('recipes').doc(id).get().then((doc) => {
+      projectFirestore.collection('recipes').doc(id).onSnapshot((doc) => {
         if(doc.exists) {
           setIsPending(false)
           setRecipe(doc.data())
