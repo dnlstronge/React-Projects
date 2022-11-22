@@ -37,6 +37,11 @@ export default function Recipe() {
 
     }, [id])
 
+    const handleClick = () => {
+      projectFirestore.collection('recipes').doc(id).update({
+        title: "Something different"
+      })
+    }
  
 
   return (
@@ -51,7 +56,7 @@ export default function Recipe() {
         {recipe.ingredients.map(ing => <li key={ing}>{ing}</li>)} 
       </ul>
       <p className="method">{recipe.method}</p>
-      <button>Update me</button>
+      <button onClick={handleClick}>Update me</button>
     </> )}
     
     </div>
