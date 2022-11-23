@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useSignup } from '../../hooks/useSignup'
 
 
 // styles
@@ -10,16 +11,20 @@ const [displayName, setDisplayName] = useState('')
 const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
 
+//destructure state from hook: 
+
+const { signup, isPending, error } = useSignup()
+
 const handleSubmit = (e) => {
   e.preventDefault()
-  console.log(displayName, email, password)
+  signup(displayName, email, password)
 
 }
 
   return (
     <form onSubmit={handleSubmit} className={styles['signup-form']}>
       <label>
-      <h2>Signup:</h2>
+      <h2>Signup</h2>
       <br></br>
       <br></br>
       <span> Display name: </span>
