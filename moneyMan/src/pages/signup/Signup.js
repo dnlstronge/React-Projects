@@ -10,13 +10,16 @@ const [userName, setUserName] = useState('')
 const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
 
-const handleSubmit = () => {
+const handleSubmit = (e) => {
+  e.preventDefault()
+  console.log(userName, email, password)
 
 }
 
   return (
-    <form className={styles['signup-form']}>
+    <form onSubmit={handleSubmit} className={styles['signup-form']}>
       <label>
+      <h2>Signup:</h2>
       <span> Username:</span>
         <input 
           type="text"
@@ -24,6 +27,7 @@ const handleSubmit = () => {
           value={userName}
         />
       </label>
+
       <label>
       <span>Email:</span>
       <input
@@ -32,6 +36,7 @@ const handleSubmit = () => {
         value={email}  
        />
       </label>
+
       <label>
       <span>Password</span>
       <input 
@@ -40,7 +45,7 @@ const handleSubmit = () => {
         value={password}
       /> 
       </label>
-      <button className='btn'>Signup</button>
+      <button className='btn'>Submit</button>
     </form>
   )
 }
