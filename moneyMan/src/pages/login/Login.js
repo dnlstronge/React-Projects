@@ -9,7 +9,10 @@ export function Login() {
 const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
 
-const handleSubmit = () => {}
+const handleSubmit = (e) => {
+e.preventDefault()
+console.log(email, password)
+}
 
   return (
   <form onSubmit={handleSubmit} className={styles['login-form']}>
