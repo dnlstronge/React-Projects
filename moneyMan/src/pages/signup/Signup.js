@@ -6,13 +6,13 @@ import styles from './Signup.module.css'
 
 
 export function Signup() {
-const [userName, setUserName] = useState('')
+const [displayName, setDisplayName] = useState('')
 const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
 
 const handleSubmit = (e) => {
   e.preventDefault()
-  console.log(userName, email, password)
+  console.log(displayName, email, password)
 
 }
 
@@ -22,11 +22,11 @@ const handleSubmit = (e) => {
       <h2>Signup:</h2>
       <br></br>
       <br></br>
-      <span> Username:</span>
+      <span> Display name: </span>
         <input 
           type="text"
-          onChange={(e) => setUserName(e.target.value)}
-          value={userName}
+          onChange={(e) => setDisplayName(e.target.value)}
+          value={displayName}
         />
       </label>
 
