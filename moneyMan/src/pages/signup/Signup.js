@@ -17,7 +17,7 @@ const { signup, isPending, error } = useSignup()
 
 const handleSubmit = (e) => {
   e.preventDefault()
-  signup(displayName, email, password)
+  signup(email, password, displayName)
 
 }
 
@@ -26,16 +26,6 @@ const handleSubmit = (e) => {
       <label>
       <h2>Signup</h2>
       <br/>
-      
-      <span> Display name: </span>
-        <input 
-          type="text"
-          onChange={(e) => setDisplayName(e.target.value)}
-          value={displayName}
-        />
-      </label>
-
-      <label>
       <span>Email:</span>
       <input
         type="email"
@@ -51,6 +41,15 @@ const handleSubmit = (e) => {
         onChange={(e) => setPassword(e.target.value)}
         value={password}
       /> 
+      </label>
+    
+      <label>
+      <span> Display name: </span>
+        <input 
+          type="text"
+          onChange={(e) => setDisplayName(e.target.value)}
+          value={displayName}
+        />
       </label>
       {!isPending && <button className='btn'>Submit</button>}
       {isPending && <button className='btn' disabled>Loading..</button>}
