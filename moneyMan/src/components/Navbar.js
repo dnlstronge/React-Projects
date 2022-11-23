@@ -13,7 +13,8 @@ export function Navbar() {
     <nav className={styles.navbar}>
     <ul>
         <li className={styles.title}>moneyMan</li>
-        <li><Link></Link></li>
+        <li><Link to="/login">Login</Link></li>
+        <li><Link to="/signup">Signup</Link></li>
     </ul>
 
     </nav>
