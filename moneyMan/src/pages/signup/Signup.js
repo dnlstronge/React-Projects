@@ -20,6 +20,8 @@ const handleSubmit = (e) => {
     <form onSubmit={handleSubmit} className={styles['signup-form']}>
       <label>
       <h2>Signup:</h2>
+      <br></br>
+      <br></br>
       <span> Username:</span>
         <input 
           type="text"
