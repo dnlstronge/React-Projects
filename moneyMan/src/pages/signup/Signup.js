@@ -25,8 +25,8 @@ const handleSubmit = (e) => {
     <form onSubmit={handleSubmit} className={styles['signup-form']}>
       <label>
       <h2>Signup</h2>
-      <br></br>
-      <br></br>
+      <br/>
+      
       <span> Display name: </span>
         <input 
           type="text"
@@ -52,7 +52,9 @@ const handleSubmit = (e) => {
         value={password}
       /> 
       </label>
-      <button className='btn'>Submit</button>
+      {!isPending && <button className='btn'>Submit</button>}
+      {isPending && <button className='btn' disabled>Loading..</button>}
+      {error && <p>{error}</p>}
     </form>
   )
 }
