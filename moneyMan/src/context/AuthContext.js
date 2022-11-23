@@ -6,7 +6,11 @@ export const AuthContext = createContext()
 //dispatch function:
 
 export const authReducer = (state, action) => {
-    //update state
+   switch (action.type) {
+    
+    default: 
+    return state
+   }
 }
 
 export const AuthContextProvider = ({ children }) => {
