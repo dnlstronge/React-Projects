@@ -15,13 +15,17 @@ const [password, setPassword] = useState('')
     <h2>Login</h2>
     <label>
     <span>Email:</span>
-      <input type="email"
-      
+      <input 
+      type="email"
+      onChange={}
       />
     </label>
     <label>
       <span>Password:</span>
-      <input type="password" />
+      <input 
+      type="password" 
+      onChange={}
+      />
     </label>
     <button className="btn">Login</button>
   </form>
