@@ -8,20 +8,16 @@ import { useAuthContext } from "./useAuthContext"
     const [isPending, setIsPending] = useState(false)
     const { dispatch } = useAuthContext()
 
-    //use case: in a button, therefore need function inside the hook:
-
     const logout = async() => {
-        setError(null)      // reset
-        setIsPending(true) //true because its waiting
+        setError(null)   
+        setIsPending(true)
         
         // this will sign user out:
         try {
             await projectAuth.signOut()
 
-            //dispatch logout action - note no payload needed as just want null value
             dispatch({type: 'LOGOUT' })
 
-            //finished load so set state:
             setIsPending(false)
             setError(null)
         }
