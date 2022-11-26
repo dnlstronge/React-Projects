@@ -24,16 +24,22 @@ export function Navbar() {
     <ul>
         <li className={styles.title}>moneyMan</li>
 
-    {(!user &&
+    {(!user && // hides when logged in
       <> 
         <li><Link to="/login">Login</Link></li>
         <li><Link to="/signup">Signup</Link></li>
 
      </>
     )}
+
+    {(user && //hides when logged out
+      <>
+        <li>Hello, {user.displayName}</li>
         <li>
           <button className="btn" onClick={ logout }>Logout</button>
         </li>
+      </>
+    )}
     </ul>
 
     </nav>
