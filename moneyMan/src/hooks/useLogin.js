@@ -9,23 +9,24 @@ export const useLogin = (email, password) => {
     const [isPending, setIsPending] = useState(false)
     const { dispatch } = useAuthContext()
 
-    const login = async() => {
+    const login = async(email, password) => {
         setError(null)   
         setIsPending(true)
         
         // this will sign user in:
         try {
             const res = await projectAuth.signInWithEmailAndPassword(email, password)
+            setIsPending(false)
+            dispatch({ type: 'LOGIN', payload: res.user })
 
-            dispatch({type: 'LOGIN', payload: res.user})
 // update state:
 
-            if (!isCancelled) {
+        if (!isCancelled) {
             setIsPending(false)
             setError(null)
             }
         }
-        //catch error
+    
         catch(err) {
             if (!isCancelled) {
             console.log(err.message)
@@ -34,9 +35,7 @@ export const useLogin = (email, password) => {
             }}
     }
     useEffect(() => {
-        return() => {
-            setIsCancelled(true)
-        }
+        return() => setIsCancelled(true)
     }, [])
 
 
