@@ -29,6 +29,18 @@ export const useFirestore = (collection) => {
     const [ isCancelled, setIsCancelled ] = useState(false) // for cleanup function on unmount
 
     //ref: collection - to be used for both adding and deleting
-    
+
     const ref = projectFirestore.collection(collection)
+
+    // add doc:
+    const addDocument = (doc) => {
+
+    }
+
+    // delete doc:
+
+    const deleteDocument = (id) => {
+
+    }
+
 }
