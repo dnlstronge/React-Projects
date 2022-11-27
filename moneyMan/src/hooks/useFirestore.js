@@ -43,4 +43,14 @@ export const useFirestore = (collection) => {
 
     }
 
+    // cleanup function
+
+    useEffect(()=> { 
+        return () => {
+        setIsCancelled(true)
+    }
+
+    }, []) // only runs on mount due to empty dep array
+
+    return { addDocument, deleteDocument, response }
 }
