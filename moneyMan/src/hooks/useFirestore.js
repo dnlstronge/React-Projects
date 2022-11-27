@@ -19,8 +19,8 @@ const firestoreReducer = (state, action) => {
         case 'IS_PENDING': 
         return { ...state, isPending: true }
         case 'ADDED_DOC':
-        return { ...state, isPending: false, document: action.payload, success: true }
-
+        return { isPending: false, document: action.payload, success: true, error: null }
+        // removed spread as manually updated each property
         default: 
         return state
     }
