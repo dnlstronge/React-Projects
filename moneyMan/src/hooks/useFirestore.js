@@ -34,11 +34,18 @@ export const useFirestore = (collection) => {
 
     const ref = projectFirestore.collection(collection)
 
+    // to dispatch if isCancelled is false: 
+
+    const dispatchIfNotCancelled = (action) => {
+        if(!isCancelled) { dispatch(action)}
+    }
+
     // add doc:
     const addDocument = async (doc) => {
-        dispatch({type: 'IS_PENDING'}) // no data = no payload
+        dispatch({type: 'IS_PENDING'}) // no data = no payload req
         try {
-            await
+            const addedDocument = await ref.add(doc)
+            dispatchIfNotCancelled
         }
         catch (err) {
 
