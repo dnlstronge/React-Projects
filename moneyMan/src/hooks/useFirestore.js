@@ -35,13 +35,19 @@ export const useFirestore = (collection) => {
     const ref = projectFirestore.collection(collection)
 
     // add doc:
-    const addDocument = (doc) => {
+    const addDocument = async (doc) => {
         dispatch({type: 'IS_PENDING'}) // no data = no payload
+        try {
+            await
+        }
+        catch (err) {
+
+        }
     }
 
     // delete doc:
 
-    const deleteDocument = (id) => {
+    const deleteDocument = async (id) => {
 
     }
 
