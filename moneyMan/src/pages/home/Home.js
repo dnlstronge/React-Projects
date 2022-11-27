@@ -1,4 +1,7 @@
 import styles from './Home.module.css'
+
+//comps
+
 import TransactionForm  from './TransactionForm'
 
 export function Home() {
@@ -6,9 +9,11 @@ export function Home() {
     <div className={styles.container}>
 
     <div className={styles.content}>transaction list
-    <TransactionForm />
+    
       </div>
+
     <div className={styles.sidebar}>
+    <TransactionForm />
       </div>
 
     </div>
