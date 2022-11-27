@@ -16,6 +16,8 @@ const firestoreReducer = (state, action) => {
     switch (action.type) {
 
         //add cases to update state
+        case 'IS_PENDING': 
+        return { ...state, isPending: true }
 
         default: 
         return state
@@ -34,7 +36,7 @@ export const useFirestore = (collection) => {
 
     // add doc:
     const addDocument = (doc) => {
-
+        dispatch({type: 'IS_PENDING'}) // no data = no payload
     }
 
     // delete doc:
