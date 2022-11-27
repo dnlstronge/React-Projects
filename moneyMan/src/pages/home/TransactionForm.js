@@ -4,10 +4,15 @@ export default function TransactionForm() {
     const [name, setName] = useState('')
     const [amount, setAmount] = useState('')
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log({name, amount}) //shorthand as name: name
+    }
+
   return (
     <>
     <h3>Add a transaction</h3>
-    <form> 
+    <form onSubmit={handleSubmit}> 
     <label>
         <span>Transaction name:</span>
         <input 
@@ -18,7 +23,7 @@ export default function TransactionForm() {
             />
     </label>
     <label>
-    <span>Transaction amount:</span>
+    <span>Amount (£):</span>
         <input 
             type="text"
             required
@@ -26,6 +31,7 @@ export default function TransactionForm() {
             value={amount}
             />
     </label>
+    <button>Add transaction</button>
     </form>
     </>
   )
