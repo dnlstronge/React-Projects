@@ -18,6 +18,8 @@ const firestoreReducer = (state, action) => {
         //add cases to update state
         case 'IS_PENDING': 
         return { ...state, isPending: true }
+        case 'ADDED_DOC':
+        return { ...state, isPending: false, document: action.payload, success: true }
 
         default: 
         return state
@@ -37,7 +39,9 @@ export const useFirestore = (collection) => {
     // to dispatch if isCancelled is false: 
 
     const dispatchIfNotCancelled = (action) => {
-        if(!isCancelled) { dispatch(action)}
+        if(!isCancelled) { 
+            dispatch(action)
+        }
     }
 
     // add doc:
@@ -45,7 +49,7 @@ export const useFirestore = (collection) => {
         dispatch({type: 'IS_PENDING'}) // no data = no payload req
         try {
             const addedDocument = await ref.add(doc)
-            dispatchIfNotCancelled
+            dispatchIfNotCancelled({ type: 'ADDED_DOC', payload: addedDocument })
         }
         catch (err) {
 
