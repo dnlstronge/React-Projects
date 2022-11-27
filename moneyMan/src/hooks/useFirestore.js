@@ -17,10 +17,12 @@ const firestoreReducer = (state, action) => {
 
         //add cases to update state
         case 'IS_PENDING': 
-        return { ...state, isPending: true }
+            return { isPending: true, document: null, success: false, error: null }
         case 'ADDED_DOC':
-        return { isPending: false, document: action.payload, success: true, error: null }
+            return { isPending: false, document: action.payload, success: true, error: null }
         // removed spread as manually updated each property
+        case 'ERROR':
+            return { isPending: false, document: null, success: false, error: action.payload, }
         default: 
         return state
     }
@@ -52,6 +54,7 @@ export const useFirestore = (collection) => {
             dispatchIfNotCancelled({ type: 'ADDED_DOC', payload: addedDocument })
         }
         catch (err) {
+            dispatchIfNotCancelled({ type: 'ERROR', payload: err.message})
 
         }
     }
