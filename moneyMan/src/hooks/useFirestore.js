@@ -1,8 +1,10 @@
+//NEEDS TO:
+
 //add new docs to firestore collection
 //remove docs from firestore collection
 
 import { useReducer, useEffect, useState,  } from "react";
-import { projectFirestore } from '../firebase/config'
+import { projectFirestore, timestamp } from '../firebase/config'
 
 let initialState = {
     document: null,
@@ -22,7 +24,7 @@ const firestoreReducer = (state, action) => {
             return { isPending: false, document: action.payload, success: true, error: null }
         // removed spread as manually updated each property
         case 'ERROR':
-            return { isPending: false, document: null, success: false, error: action.payload, }
+            return { isPending: false, document: null, success: false, error: action.payload }
         default: 
         return state
     }
@@ -50,6 +52,7 @@ export const useFirestore = (collection) => {
     const addDocument = async (doc) => {
         dispatch({type: 'IS_PENDING'}) // no data = no payload req
         try {
+            const createdAt = timestamp.fromDate(new Date())
             const addedDocument = await ref.add(doc)
             dispatchIfNotCancelled({ type: 'ADDED_DOC', payload: addedDocument })
         }
@@ -62,7 +65,7 @@ export const useFirestore = (collection) => {
     // delete doc:
 
     const deleteDocument = async (id) => {
-
+        
     }
 
     // cleanup function
