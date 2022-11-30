@@ -13,7 +13,8 @@ export default function TransactionForm({uid}) {
             name, 
             amount}) 
     }
-// add useEffect to listen for success
+
+//  Clears Form on submit
 
 useEffect( () => {
 if ( response.success ) {
