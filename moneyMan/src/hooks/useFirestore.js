@@ -53,7 +53,7 @@ export const useFirestore = (collection) => {
         dispatch({type: 'IS_PENDING'}) // no data = no payload req
         try {
             const createdAt = timestamp.fromDate(new Date())
-            const addedDocument = await ref.add(doc)
+            const addedDocument = await ref.add({...doc, createdAt})
             dispatchIfNotCancelled({ type: 'ADDED_DOC', payload: addedDocument })
         }
         catch (err) {
