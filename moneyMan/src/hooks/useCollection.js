@@ -37,3 +37,7 @@ export const useCollection = (collection, query) => {
 
     return {documents, error}
 }
+
+// Houston we have Problem: would this not cause infinite cycle of rerender
+// due to an array reference type? i.e JS will see query as different and because
+// there is a diff to something in the dep array useEffect would fire again and again......
