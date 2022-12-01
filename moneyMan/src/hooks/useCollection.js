@@ -2,9 +2,13 @@ import { useEffect, useState } from "react"
 import { projectFirestore } from "../firebase/config"
 
 
-export const useCollection = (collection, query) => {
+export const useCollection = (collection, _query) => {
     const [ documents, setDocuments ] = useState(null)
     const [ error, setError ] = useState(null)
+
+// fixes issue cause by using an array inside dep array (inf loop)
+
+    const query = useRef(_query).current
 
 
     useEffect(() => {
@@ -41,3 +45,4 @@ export const useCollection = (collection, query) => {
 // Houston we have Problem: would this not cause infinite cycle of rerender
 // due to an array reference type? i.e JS will see query as different and because
 // there is a diff to something in the dep array useEffect would fire again and again......
+// useRef to get arround this? rename query and wrap using useref, store that in var called query
