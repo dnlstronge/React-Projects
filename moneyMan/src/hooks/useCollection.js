@@ -11,7 +11,7 @@ export const useCollection = (collection, query) => {
         let ref = projectFirestore.collection(collection)
 // add where
 
-        if (...query) {
+        if (query) {
             ref = ref.where(...query)
         }
 
