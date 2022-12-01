@@ -20,7 +20,7 @@ export function Home() {
 
     <div className={styles.content}>
     {error && <p>{error}</p>}
-    {documents && <TransactionList />}
+    {documents && <TransactionList transactions={documents}/>}
     
       </div>
 
