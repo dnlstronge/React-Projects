@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { projectFirestore } from "../firebase/config"
 
 
@@ -7,6 +7,7 @@ export const useCollection = (collection, _query) => {
     const [ error, setError ] = useState(null)
 
 // fixes issue cause by using an array inside dep array (inf loop)
+// "_query" is "different" and causes inf loop if used directly in dependency array
 
     const query = useRef(_query).current
 
