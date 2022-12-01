@@ -15,7 +15,7 @@ export function Home() {
   const { user } = useAuthContext()
   const { documents, error } = useCollection(
     'transactions',
-    ['', '', '']
+    ['uid', '==', user.uid]
   )
 
   return (
