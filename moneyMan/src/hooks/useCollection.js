@@ -33,7 +33,7 @@ export const useCollection = (collection, query) => {
             return () => unsubscribe()
 
 
-    }, [collection])
+    }, [collection, query])
 
     return {documents, error}
 }
