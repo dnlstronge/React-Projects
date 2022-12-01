@@ -8,7 +8,7 @@ import { useAuthContext } from '../../hooks/useAuthContext'
 import { useCollection } from '../../hooks/useCollection'
 
 //comps
-
+import TransactionList from './TransactionList'
 import TransactionForm  from './TransactionForm'
 
 export function Home() {
