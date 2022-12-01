@@ -7,11 +7,14 @@ export const useCollection = (collection) => {
     const [ error, setError ] = useState(null)
 
 
-    // below: when using snap shot two args, 1st sets state for docs and error
-    // the second handles error
-
     useEffect(() => {
         let ref = projectFirestore.collection(collection)
+// add where
+
+        if (query) {
+            ref = ref.where(query)
+        }
+
         const unsubscribe = ref.onSnapshot( (snapshot) => {
             let results = []
             snapshot.docs.forEach( doc => {

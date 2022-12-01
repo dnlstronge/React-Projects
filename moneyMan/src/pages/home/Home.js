@@ -13,7 +13,10 @@ import TransactionForm  from './TransactionForm'
 
 export function Home() {
   const { user } = useAuthContext()
-  const { documents, error } = useCollection('transactions')
+  const { documents, error } = useCollection(
+    'transactions',
+    ['', '', '']
+  )
 
   return (
     <div className={styles.container}>
