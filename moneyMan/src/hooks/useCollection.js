@@ -11,8 +11,8 @@ export const useCollection = (collection, query) => {
         let ref = projectFirestore.collection(collection)
 // add where
 
-        if (query) {
-            ref = ref.where(query)
+        if (...query) {
+            ref = ref.where(...query)
         }
 
         const unsubscribe = ref.onSnapshot( (snapshot) => {
