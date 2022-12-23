@@ -14,7 +14,8 @@ const queryString = useLocation().search
 const queryParams = new URLSearchParams(queryString)
 const query = queryParams.get('q')
 
-
+// will only search the JSON, needs updating to firebase
+// as crud capabilty has been added
 
 const url = "http://localhost:3000/recipes?q=" + query
 const {error, isPending, data} = UseFetch(url)
