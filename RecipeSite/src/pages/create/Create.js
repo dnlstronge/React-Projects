@@ -30,7 +30,7 @@ export default function Create() {
     await projectFirestore.collection('recipes').add(doc)
     
     // after above has finished push user back: 
-    navigate.push('/')
+    navigate('/')
     } catch (err) {
       console.log(err)
     }
