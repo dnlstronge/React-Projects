@@ -1,7 +1,7 @@
 // imports
 import { useState, useRef, } from 'react'
-import { useHistory } from 'react-router-dom'
 import { projectFirestore } from '../../firebase/config.js'
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -19,7 +19,7 @@ export default function Create() {
   const [newIngredient, setNewIngredient] = useState('')
   const [ingredients, setIngredients] = useState([])
   const ingredientInput = useRef(null)
-  const history = useHistory()
+  const navigate = useNavigate()
   
 
 
@@ -30,7 +30,7 @@ export default function Create() {
     await projectFirestore.collection('recipes').add(doc)
     
     // after above has finished push user back: 
-    history.push('/')
+    navigate.push('/')
     } catch (err) {
       console.log(err)
     }
