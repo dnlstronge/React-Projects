@@ -1,5 +1,5 @@
 
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import {ThemeSelector} from './components/ThemeSelector';
 
 // styles
@@ -23,11 +23,11 @@ function App() {
   const { mode } = useTheme()
 
   return (
-    <div className={`App ${mode}`}>
+    <div className={`App ${modeRoutes}`}>
       <BrowserRouter>
         <Navbar />
         <ThemeSelector /> 
-        <Switch>
+        <Routes>
             <Route exact path="/">
               <Home />
             </Route>
@@ -40,7 +40,7 @@ function App() {
             <Route path="/recipes/:id"> 
               <Recipe />
             </Route>
-          </Switch>
+          </Routes>
       </BrowserRouter>
     </div>
   );
