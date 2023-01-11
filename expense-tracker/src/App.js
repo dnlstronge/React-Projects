@@ -24,12 +24,21 @@ function App(props) {
      id: 'e3',
      title: 'Netflix' ,
      amount: 9.99 , 
-     date: new Date(2023, 0, 11)}
+     date: new Date(2023, 0, 11)},
+
+     {
+     id: 'e4',
+     title: 'Theatre Tickets',
+     amount: 80,
+     date: new Date(2022, 11, 25)}
+
   ]
  
   return (
     <div className="App">
+
       <h2>Heyho.... let's go!</h2>
+
       <Expenses items={expenses}/>
       
    
