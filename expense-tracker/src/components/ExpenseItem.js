@@ -7,7 +7,7 @@ function ExpenseItem() {
 
     const expenseDate = new Date(2023, 0 , 11)
     const expenseTitle = "Eating out"
-    const expenseAmount = 75.40
+    const expenseAmount = 75.42
 
 return (
     <div className="expense-item">
