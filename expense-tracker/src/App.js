@@ -1,8 +1,9 @@
 
-//import './App.css';
+
 
 //components: 
 import Expenses from './components/Expenses/Expenses'
+import NewExpense from './components/NewExpense/NewExpense';
 
 
 const App = (props) => {
@@ -40,7 +41,7 @@ const App = (props) => {
       <h2>Heyho.... let's go!</h2>
 
       <Expenses items={expenses}/>
-      
+      <NewExpense />
    
     </div>
   );
