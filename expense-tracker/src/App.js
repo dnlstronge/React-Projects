@@ -38,10 +38,10 @@ const App = (props) => {
   return (
     <div className="App">
 
-      <h2>Heyho.... let's go!</h2>
-
-      <Expenses items={expenses}/>
+      <h2>Expense Tracker</h2>
       <NewExpense />
+      <Expenses items={expenses}/>
+     
    
     </div>
   );
