@@ -7,7 +7,9 @@ import Card from '../UI/Card';
 
 
 const ExpenseItem = (props) => {
- 
+    const handleClick = () => {
+        
+    }
     
     return (
         <Card className="expense-item">
@@ -16,6 +18,7 @@ const ExpenseItem = (props) => {
                 <h2>{props.title}</h2>
                 <div className="expense-item__price">£{props.amount}</div>
             </div>
+            <button onCLick={handleClick}>Change Title</button>
         </Card> 
         
         
