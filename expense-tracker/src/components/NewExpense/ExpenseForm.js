@@ -6,30 +6,33 @@ import { useState } from 'react'
 
 const ExpenseForm = () => {
 
-//   const [enteredTitle, setEnteredTitle] = useState('')
-//   const [enteredAmount, setEnteredAmount] = useState('')
-//   const [enteredDate, setEnteredDate] = useState('')
+  const [enteredTitle, setEnteredTitle] = useState('')
+  const [enteredAmount, setEnteredAmount] = useState('')
+  const [enteredDate, setEnteredDate] = useState('')
 
-   const [userInput, setUserInput] = useState({
+ /*const [userInput, setUserInput] = useState({
                                         enteredTitle: '', 
                                         enteredAmount: '', 
-                                        enteredDate: ''})   
+                                        enteredDate: ''})  */ 
 
   const titleChangeHandler = (e) => { 
-     setUserInput((prev) => {
-          return {...userInput, enteredTitle: e.target.value}
-     })
+     setEnteredTitle(e.target.value)
+     // setUserInput((prev) => {
+     //      return {...userInput, enteredTitle: e.target.value}
+     // })
     
    }
   const amountChangeHandler = (e) => {
-     setUserInput((prev) => {
-          return {...userInput, enteredAmount: e.target.value} 
-     })
+     setEnteredAmount(e.target.value)
+     // setUserInput((prev) => {
+     //      return {...userInput, enteredAmount: e.target.value} 
+     // })
   }
   const dateChangeHandler = (e) => {
-    setUserInput((prev) => {
-     return {...userInput, enteredDate: e.target.value}
-    })
+     setEnteredDate(e.target.value)
+//     setUserInput((prev) => {
+//      return {...userInput, enteredDate: e.target.value}
+//     })
   }
 
       return (  
