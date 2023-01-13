@@ -40,8 +40,9 @@ const ExpenseForm = () => {
      const expenseData = {
           title: enteredTitle,
           amount: enteredAmount,
-          date: enteredDate
+          date: new Date(enteredDate)
      }
+     console.log(expenseData)
   }
 
       return (  
