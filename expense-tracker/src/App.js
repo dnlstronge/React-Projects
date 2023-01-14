@@ -1,43 +1,49 @@
-
+import { useState } from 'react'
 
 
 //components: 
 import Expenses from './components/Expenses/Expenses'
 import NewExpense from './components/NewExpense/NewExpense';
 
+//initial expense values:
+
+const DUMMY_EXPENSES = [
+  {
+   id: 'e1', 
+   title: 'Cinema' ,
+   amount: 25.55, 
+   date: new Date(2023, 0, 11)},
+
+   {
+   id: 'e2',
+   title: 'Eating Out' ,
+   amount: 74.45 , 
+   date: new Date(2023, 0, 11)},
+
+   {
+   id: 'e3',
+   title: 'Netflix' ,
+   amount: 9.99 , 
+   date: new Date(2023, 0, 11)},
+
+   {
+   id: 'e4',
+   title: 'Theatre Tickets',
+   amount: 80,
+   date: new Date(2022, 11, 25)}
+
+]
 
 
-const App = (props) => {
 
-  const expenses = [
-    {
-     id: 'e1', 
-     title: 'Cinema' ,
-     amount: 25.55, 
-     date: new Date(2023, 0, 11)},
+const App = () => {
 
-     {
-     id: 'e2',
-     title: 'Eating Out' ,
-     amount: 74.45 , 
-     date: new Date(2023, 0, 11)},
-
-     {
-     id: 'e3',
-     title: 'Netflix' ,
-     amount: 9.99 , 
-     date: new Date(2023, 0, 11)},
-
-     {
-     id: 'e4',
-     title: 'Theatre Tickets',
-     amount: 80,
-     date: new Date(2022, 11, 25)}
-
-  ]
+  const [expenses, setExpenses] = useState(DUMMY_EXPENSES)
+  
   const addExpenseHandler = (expense) => {
-      console.log('in App.js');
-      console.log(expense);
+      setExpenses((prev) => {
+        return [expense, ...prev]
+      })
   };
 
 
