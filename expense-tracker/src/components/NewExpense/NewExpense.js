@@ -12,8 +12,10 @@ const NewExpense = (props) => {
         const expenseData = {
             ...enteredExpenseData
         , id: Math.random().toString()
+
     }
     props.onAddExpense(expenseData);
+    setShowForm(false)
     }
 
     const [showForm, setShowForm] = useState(false)

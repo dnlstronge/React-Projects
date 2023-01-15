@@ -46,7 +46,7 @@ const ExpenseForm = (props) => {
      setEnteredTitle('')
      setEnteredAmount('')
      setEnteredDate('')
-     props.toggleForm()
+     
      
   }
  
