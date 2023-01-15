@@ -46,7 +46,7 @@ const ExpenseForm = (props) => {
      setEnteredTitle('')
      setEnteredAmount('')
      setEnteredDate('')
-    
+    props.toggleForm(false)
      
   }
   const onCancelHandler = () => {
@@ -85,7 +85,7 @@ const ExpenseForm = (props) => {
                </div>
             </div>
             <div className="new-expense__actions">
-                <button onClick={onCancelHandler}>Cancel</button>
+                <button type="button" onClick={onCancelHandler}>Cancel</button>
                 <button type="submit" >Add expense</button>
             </div>
         </form> 
