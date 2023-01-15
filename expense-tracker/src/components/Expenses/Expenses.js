@@ -25,7 +25,7 @@ const Expenses = (props) => {
             selected={dateSelect} 
             onDateSelect={onDateSelectHandler}/>
             {filteredExpenses.length === 0 && <p>No data for selected year</p>}
-            {filteredExpenses.map((expense) => (
+            {filteredExpenses.length > 0 && filteredExpenses.map((expense) => (
             <ExpenseItem 
               key={expense.id}
               title={expense.title}
