@@ -24,8 +24,8 @@ const Expenses = (props) => {
          <ExpensesFilter 
             selected={dateSelect} 
             onDateSelect={onDateSelectHandler}/>
-            {filteredExpenses.length === 0 ? <p>There is no data for this year</p> :
-            filteredExpenses.map((expense) => (
+            {filteredExpenses.length === 0 && <p>No data for selected year</p>}
+            {filteredExpenses.map((expense) => (
             <ExpenseItem 
               key={expense.id}
               title={expense.title}
@@ -33,7 +33,6 @@ const Expenses = (props) => {
               date={expense.date}
             />
           ))}
-            {}
          
        </Card>
        </div>
