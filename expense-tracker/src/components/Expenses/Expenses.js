@@ -9,11 +9,11 @@ const Expenses = (props) => {
     const [dateSelect, setDateSelect] = useState('2023')
 
     const filteredExpenses = props.items.filter((expense) => { 
-    return expense.date.getFullYear().toString() === dateSelect })
+      return expense.date.getFullYear().toString() === dateSelect })
 
     const onDateSelectHandler = (selectedDate) => {
       setDateSelect(selectedDate)
-      console.log(selectedDate)
+      
     }
     
     return (
@@ -24,8 +24,8 @@ const Expenses = (props) => {
          <ExpensesFilter 
             selected={dateSelect} 
             onDateSelect={onDateSelectHandler}/>
-        {filteredExpenses.map((expense) => (
-          <ExpenseItem 
+            {filteredExpenses.map((expense) => (
+            <ExpenseItem 
               key={expense.id}
               title={expense.title}
               amount={expense.amount}
