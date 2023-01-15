@@ -15,25 +15,27 @@ const Expenses = (props) => {
       setDateSelect(selectedDate)
       
     }
+
+    let expensesContent = <p>No data for the selected year</p>
+
+    if (filteredExpenses.length > 0) {
+      expensesContent = filteredExpenses.map((expense) => (
+        <ExpenseItem 
+          key={expense.id}
+          title={expense.title}
+          amount={expense.amount}
+          date={expense.date}
+        /> ))
+    }
     
     return (
       <div>
       
        <Card className='expenses'>
-
-         <ExpensesFilter 
+       <ExpensesFilter 
             selected={dateSelect} 
             onDateSelect={onDateSelectHandler}/>
-            {filteredExpenses.length === 0 && <p>No data for selected year</p>}
-            {filteredExpenses.length > 0 && filteredExpenses.map((expense) => (
-            <ExpenseItem 
-              key={expense.id}
-              title={expense.title}
-              amount={expense.amount}
-              date={expense.date}
-            />
-          ))}
-         
+         {expensesContent}  
        </Card>
        </div>
     )
